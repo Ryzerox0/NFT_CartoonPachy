@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home | CartoonPachy</title>
+    <title>CartoonPachy - Collection NFT Unique</title>
     <link rel="icon" type="image/png" href="1.png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -52,7 +52,7 @@
             min-height: 100vh;
             position: relative;
             overflow: visible;
-            padding: 80px 0 250px;
+            padding: 80px 0 200px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -133,14 +133,14 @@
         
         .collection-section {
             background: white;
-            padding: 180px 0 100px;
+            padding: 150px 0 100px;
             position: relative;
-            margin-top: -80px;
+            margin-top: -50px;
         }
         
         .what-section {
             background: white;
-            padding: 100px 0;
+            padding: 150px 0 100px;
             position: relative;
         }
         
@@ -174,14 +174,6 @@
             font-weight: 900;
             color: #1F2937;
             margin-bottom: 30px;
-            text-align: right;
-        }
-        
-        .vision-section-new p {
-            font-size: 1.2rem;
-            color: #4B5563;
-            line-height: 1.8;
-            text-align: right;
         }
         
         .collection-section-old {
@@ -286,7 +278,7 @@
         
         .navbar-custom {
             background: transparent !important;
-            backdrop-filter: none !important;
+            backdrop-filter: none;
             padding: 15px 0;
             transition: all 0.3s ease;
             position: fixed;
@@ -296,8 +288,8 @@
         }
         
         .navbar-custom.scrolled {
-            background: transparent !important;
-            backdrop-filter: none !important;
+            background: rgba(0,0,0,0.1) !important;
+            backdrop-filter: blur(10px);
         }
         
         .navbar-custom a {
@@ -339,7 +331,7 @@
         
         .hero-overlay-image {
             position: absolute;
-            bottom: -180px;
+            bottom: -120px;
             right: 10%;
             max-width: 380px;
             width: 30%;
@@ -372,11 +364,6 @@
                 padding: 100px 0;
                 margin-top: 0;
             }
-            
-            .vision-section-new h2,
-            .vision-section-new p {
-                text-align: left;
-            }
         }
         
         @keyframes fadeIn {
@@ -406,7 +393,7 @@
         }
         
         .navbar-toggler-icon {
-            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg" viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
         }
         
         .alert {
@@ -439,7 +426,7 @@
                         <li class="nav-item"><a class="nav-link" href="#vision">Home</a></li>
                         <li class="nav-item"><a class="nav-link" href="#collection">About</a></li>
                         <li class="nav-item"><a class="nav-link" href="#why">Collection</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#products">Why Pachy</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#products">Why Dino</a></li>
                         <li class="nav-item"><a class="nav-link" href="#collaboration">Products</a></li>
                         <li class="nav-item"><a class="nav-link" href="#join">Collaboration</a></li>
                     </ul>
@@ -467,7 +454,7 @@
                     </div>
                 </div>
             </div>
-            <!-- Image en superposition - Positionnée plus bas -->
+            <!-- Image en superposition -->
             <img src="10en1.png" alt="CartoonPachy Characters" class="hero-overlay-image">
         </section>
 
@@ -476,25 +463,31 @@
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-lg-7">
-                        <h2>WHAT ARE CARTOON PACHYS</h2>
+                        <h2>WHAT ARE DINO GOTCHIS</h2>
                         <p>
-                            Cartoon Pachys are 5,555 unique profile picture NFTs starring Pachy, the cheerful mascot of 
-                            <strong>CartoonPachy</strong>, a creative NFT ecosystem with over 500,000+ users.
+                            Dino Gotchis are 7,777 unique profile picture NFTs starring Dino, the cheerful mascot of 
+                            <strong>Sleepagotchi</strong>, a wellness app ecosystem with over 1,000,000 users.
                         </p>
+                    </div>
+                    <div class="col-lg-5">
+                        <img src="dino-character.png" alt="Dino Gotchi Character" class="what-image">
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- Vision Section -->
-        <section class="vision-section-new" id="vision">
+        <section class="vision-section-new">
             <div class="container">
                 <div class="row align-items-center">
-                    <div class="col-lg-7 offset-lg-5">
+                    <div class="col-lg-5 order-lg-1 order-2">
+                        <img src="dino-vision.png" alt="Dino Vision" class="what-image">
+                    </div>
+                    <div class="col-lg-7 order-lg-2 order-1">
                         <h2>VISION</h2>
                         <p>
-                            Creative and full of character, Cartoon Pachys spread joy and imagination wherever they go. Each collectible is 
-                            part of a growing IP that unites people around creativity, digital art, and community spirit.
+                            Playful and full of charm, Dino Gotchis spread joy and wellness wherever they go. Each collectible is 
+                            part of a growing IP that unites people around fun, healthy living, and community spirit.
                         </p>
                     </div>
                 </div>
@@ -504,24 +497,24 @@
         <!-- Collection Section -->
         <section class="collection-section-old" id="stats">
             <div class="container">
-                <h2 class="section-title">THE COLLECTION</h2>
+                <h2 class="section-title">LA COLLECTION</h2>
                 <div class="row">
                     <div class="col-md-4">
                         <div class="stats-box">
                             <div class="stats-number" id="collection-size">5,555</div>
-                            <div class="stats-label">Unique NFTs</div>
+                            <div class="stats-label">NFTs Uniques</div>
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="stats-box">
                             <div class="stats-number">🎨</div>
-                            <div class="stats-label">Traits and rarities reflecting Pachy's unique personality</div>
+                            <div class="stats-label">Traits et raretés reflétant la personnalité unique de Pachy</div>
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="stats-box">
                             <div class="stats-number">✨</div>
-                            <div class="stats-label">Each Pachy is unique and special</div>
+                            <div class="stats-label">Chaque Pachy est unique et spécial</div>
                         </div>
                     </div>
                 </div>
@@ -531,28 +524,28 @@
         <!-- Why Own Section -->
         <section class="why-section" id="why">
             <div class="container">
-                <h2 class="section-title">WHY OWN A CARTOON PACHY?</h2>
+                <h2 class="section-title">POURQUOI POSSÉDER UN CARTOON PACHY?</h2>
                 <div class="row">
                     <div class="col-lg-6">
                         <div class="bullet-point">
                             <i class="fas fa-check-circle"></i>
-                            <span>Pachy isn't just digital art. It's an endearing character that inspires creativity and imagination.</span>
+                            <span>Pachy n'est pas qu'une œuvre d'art numérique. C'est un personnage attachant qui inspire créativité et imagination.</span>
                         </div>
                         <div class="bullet-point">
                             <i class="fas fa-check-circle"></i>
-                            <span>Together, we're building Pachy as the next great animated character intellectual property.</span>
+                            <span>Ensemble, nous construisons Pachy comme la prochaine grande propriété intellectuelle de personnage animé.</span>
                         </div>
                     </div>
                     <div class="col-lg-6">
-                        <h3 style="color: white; margin-bottom: 30px;">OWNING A CARTOON PACHY MEANS JOINING:</h3>
+                        <h3 style="color: white; margin-bottom: 30px;">POSSÉDER UN CARTOON PACHY SIGNIFIE REJOINDRE:</h3>
                         <div class="feature-box">
-                            <p style="color: white;">🌟 A community that values creativity, art and innovation</p>
+                            <p style="color: white;">🌟 Une communauté qui valorise la créativité, l'art et l'innovation</p>
                         </div>
                         <div class="feature-box">
-                            <p style="color: white;">📱 An ecosystem where Pachy becomes an iconic character</p>
+                            <p style="color: white;">📱 Un écosystème où Pachy devient un personnage emblématique</p>
                         </div>
                         <div class="feature-box">
-                            <p style="color: white;">🎭 An expanding universe of stories, collaborations and adventures you help create</p>
+                            <p style="color: white;">🎭 Un univers en expansion d'histoires, de collaborations et d'aventures que vous aidez à créer</p>
                         </div>
                     </div>
                 </div>
@@ -562,13 +555,13 @@
         <!-- Products Section -->
         <section class="products-section" id="products">
             <div class="container">
-                <h2 class="section-title">OUR PRODUCTS</h2>
+                <h2 class="section-title">NOS PRODUITS</h2>
                 <div class="row justify-content-center">
                     <div class="col-lg-8">
                         <div class="feature-box text-center">
                             <p style="font-size: 1.3rem; color: white;">
-                                Pachy is quickly becoming a recognized character in the NFT universe and beyond, 
-                                with appearances in various creative applications and platforms
+                                Pachy devient rapidement un personnage reconnu dans l'univers des NFTs et au-delà, 
+                                avec des apparitions dans diverses applications et plateformes créatives
                             </p>
                         </div>
                     </div>
@@ -579,36 +572,36 @@
         <!-- Collaboration Section -->
         <section class="collaboration-section" id="collaboration">
             <div class="container">
-                <h2 class="section-title">COLLABORATION & REACH</h2>
+                <h2 class="section-title">COLLABORATION ET PORTÉE</h2>
                 <div class="row">
                     <div class="col-lg-6">
                         <div class="bullet-point">
                             <i class="fas fa-handshake"></i>
-                            <span>Partnership with PixelPals</span>
+                            <span>Partenariat avec PixelPals</span>
                         </div>
                         <div class="bullet-point">
                             <i class="fas fa-handshake"></i>
-                            <span>Partnership with MetaFriends</span>
+                            <span>Partenariat avec MetaFriends</span>
                         </div>
                         <div class="bullet-point">
                             <i class="fas fa-handshake"></i>
-                            <span>Partnership with NFTVerse</span>
+                            <span>Partenariat avec NFTVerse</span>
                         </div>
                         <div class="bullet-point">
                             <i class="fas fa-newspaper"></i>
-                            <span>Featured in digital art publications</span>
+                            <span>Présenté dans des publications d'art numérique</span>
                         </div>
                         <div class="bullet-point">
                             <i class="fas fa-globe"></i>
-                            <span>Appeared in creative projects and partner ecosystems</span>
+                            <span>Apparu dans des projets créatifs et des écosystèmes partenaires</span>
                         </div>
                     </div>
                     <div class="col-lg-6">
                         <div class="feature-box">
-                            <h4 style="color: white; margin-bottom: 20px;">This is just the beginning</h4>
+                            <h4 style="color: white; margin-bottom: 20px;">Ce n'est que le début</h4>
                             <p style="color: white; font-size: 1.1rem;">
-                                New collaborations with artists, content creators and Web3 communities 
-                                are already in development
+                                De nouvelles collaborations avec des artistes, des créateurs de contenu et des communautés Web3 
+                                sont déjà en cours de développement
                             </p>
                         </div>
                     </div>
@@ -619,14 +612,14 @@
         <!-- CTA Section -->
         <section class="cta-section" id="join">
             <div class="container text-center">
-                <h2 class="section-title" style="color: #1F2937;">Pachy is ready to meet its holders.</h2>
-                <h3 style="font-size: 2rem; color: #1F2937; margin-bottom: 40px;">Will you be one of them?</h3>
+                <h2 class="section-title" style="color: #1F2937;">Pachy est prêt à rencontrer ses détenteurs.</h2>
+                <h3 style="font-size: 2rem; color: #1F2937; margin-bottom: 40px;">Serez-vous l'un d'entre eux?</h3>
                 <div class="row justify-content-center">
                     <div class="col-lg-6">
                         <form id="waitlist-form">
                             <div class="input-group mb-3" style="box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
-                                <input type="email" class="form-control form-control-lg" placeholder="Your email" id="email" name="email" required>
-                                <button class="btn btn-custom" type="submit">Join the Waitlist</button>
+                                <input type="email" class="form-control form-control-lg" placeholder="Votre email" id="email" name="email" required>
+                                <button class="btn btn-custom" type="submit">Rejoindre la Waitlist</button>
                             </div>
                         </form>
                         <div id="form-message"></div>
@@ -638,7 +631,7 @@
         <!-- Footer -->
         <footer>
             <div class="container">
-                <p>&copy; <span id="current-year">2024</span> CartoonPachy. All rights reserved.</p>
+                <p>&copy; <span id="current-year">2024</span> CartoonPachy. Tous droits réservés.</p>
                 <div class="mt-3">
                     <a href="#" class="text-white mx-3"><i class="fab fa-twitter fa-2x"></i></a>
                     <a href="#" class="text-white mx-3"><i class="fab fa-discord fa-2x"></i></a>
@@ -661,11 +654,14 @@
             });
         });
 
-        // Navbar scroll effect - Maintenant complètement transparente
+        // Navbar scroll effect
         window.addEventListener('scroll', function() {
             const navbar = document.querySelector('.navbar-custom');
-            // La navbar reste toujours transparente, pas d'effet au scroll
-            navbar.classList.remove('scrolled');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
         });
 
         // Current year for footer
@@ -678,10 +674,10 @@
             const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
             
             if (emailRegex.test(email)) {
-                document.getElementById('form-message').innerHTML = '<div class="alert alert-success">✅ Thank you! You are now on the waitlist!</div>';
+                document.getElementById('form-message').innerHTML = '<div class="alert alert-success">✅ Merci! Vous êtes maintenant sur la liste d\'attente!</div>';
                 document.getElementById('email').value = '';
             } else {
-                document.getElementById('form-message').innerHTML = '<div class="alert alert-danger">❌ Invalid email</div>';
+                document.getElementById('form-message').innerHTML = '<div class="alert alert-danger">❌ Email invalide</div>';
             }
         });
     </script>
