@@ -287,6 +287,22 @@
             animation: fadeIn 1.5s ease;
         }
         
+        .overlay-image {
+            position: absolute;
+            top: 50%;
+            right: 0;
+            transform: translateY(-50%);
+            max-width: 50%;
+            height: auto;
+            z-index: 2;
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(-50%) translateY(0px); }
+            50% { transform: translateY(-50%) translateY(-20px); }
+        }
+        
         @keyframes fadeIn {
             from {
                 opacity: 0;
@@ -325,6 +341,23 @@
         .logo-image {
             height: 50px;
             width: auto;
+        }
+        
+        .what-is-section {
+            background: rgba(255,255,255,0.1);
+            padding: 150px 0 100px;
+            position: relative;
+            margin-top: -50px;
+            z-index: 2;
+        }
+        
+        .what-is-content {
+            background: rgba(255,255,255,0.95);
+            border-radius: 20px;
+            padding: 60px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+            position: relative;
+            z-index: 3;
         }
     </style>
 </head>
@@ -375,19 +408,24 @@
                     </div>
                 </div>
             </div>
+            
+            <!-- Image de superposition 10en1.png -->
+            <img src="10en1.png" alt="CartoonPachy Characters" class="overlay-image">
         </section>
 
-        <!-- Vision Section -->
-        <section class="vision-section" id="vision">
+        <!-- What is Section -->
+        <section class="what-is-section" id="vision">
             <div class="container">
-                <h2 class="section-title">NOTRE VISION</h2>
                 <div class="row justify-content-center">
-                    <div class="col-lg-8">
-                        <div class="feature-box text-center">
-                            <p style="font-size: 1.3rem; color: white; line-height: 1.8;">
-                                Créatifs et pleins de caractère, les CartoonPachys inspirent l'imagination et la joie partout où ils vont. 
-                                Chaque NFT fait partie d'une propriété intellectuelle en expansion qui unit les passionnés 
-                                autour de l'art numérique, de la narration et de l'esprit communautaire.
+                    <div class="col-lg-10">
+                        <div class="what-is-content">
+                            <h2 class="text-center mb-5" style="font-size: 3rem; font-weight: 800; color: #1F2937;">
+                                WHAT ARE CARTOON PACHYS
+                            </h2>
+                            <p style="font-size: 1.3rem; color: #4B5563; line-height: 1.8; text-align: center;">
+                                Cartoon Pachys are 5,555 unique profile picture NFTs starring Pachy, the cheerful mascot of 
+                                CartoonPachy, a creative NFT ecosystem with over 500,000+ users. Each Pachy brings joy and 
+                                imagination to the digital world, creating a vibrant community of art lovers and collectors.
                             </p>
                         </div>
                     </div>
