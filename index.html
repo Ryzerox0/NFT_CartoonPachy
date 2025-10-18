@@ -27,6 +27,9 @@
             position: relative;
             overflow: hidden;
             padding: 80px 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
         
         .hero-section::before {
@@ -41,7 +44,7 @@
         }
         
         .logo {
-            font-size: 2.5rem;
+            font-size: 2rem;
             font-weight: 800;
             color: white;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
@@ -196,15 +199,38 @@
         }
         
         .navbar-custom {
-            background: rgba(255,255,255,0.1) !important;
-            backdrop-filter: blur(10px);
-            padding: 20px 0;
+            background: rgba(255,255,255,0.05) !important;
+            backdrop-filter: blur(15px);
+            padding: 10px 0;
+            transition: all 0.3s ease;
+        }
+        
+        .navbar-custom.scrolled {
+            background: rgba(0,0,0,0.3) !important;
         }
         
         .navbar-custom a {
             color: white !important;
             font-weight: 600;
-            margin: 0 15px;
+            margin: 0 10px;
+            font-size: 0.9rem;
+        }
+        
+        .hero-image {
+            max-width: 90%;
+            height: auto;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+            animation: fadeIn 1.5s ease;
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
         }
         
         footer {
@@ -212,6 +238,19 @@
             color: white;
             padding: 40px 0;
             text-align: center;
+        }
+        
+        .navbar-toggler {
+            border: none;
+            padding: 4px 8px;
+        }
+        
+        .navbar-toggler:focus {
+            box-shadow: none;
+        }
+        
+        .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
         }
     </style>
 </head>
@@ -244,21 +283,8 @@
 
     <!-- Hero Section -->
     <section class="hero-section">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6">
-                    <h1 class="hero-title">QU'EST-CE QUE CARTOON PACHY</h1>
-                    <p class="hero-subtitle">
-                        CartoonPachy est une collection de <?php echo $collection_size; ?> NFTs uniques mettant en vedette Pachy, 
-                        un personnage attachant inspiré du Pachycéphalosaure, qui apporte joie et créativité à travers 
-                        un écosystème d'applications avec plus de <?php echo $app_users; ?> utilisateurs.
-                    </p>
-                    <button class="btn btn-custom">Découvrir la Collection</button>
-                </div>
-                <div class="col-lg-6 text-center">
-                    <div class="pachy-emoji">🦖✨</div>
-                </div>
-            </div>
+        <div class="container text-center">
+            <img src="CartoonPachyTitre.png" alt="CartoonPachy" class="hero-image">
         </div>
     </section>
 
@@ -442,12 +468,13 @@
             });
         });
 
-        // Parallax effect
-        window.addEventListener('scroll', () => {
-            const scrolled = window.pageYOffset;
-            const parallax = document.querySelector('.hero-section');
-            if(parallax) {
-                parallax.style.transform = `translateY(${scrolled * 0.5}px)`;
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar-custom');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
             }
         });
     </script>
