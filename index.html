@@ -9,11 +9,13 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            --primary-purple: #8B5CF6;
-            --primary-pink: #EC4899;
-            --primary-blue: #3B82F6;
-            --bg-dark: #1F2937;
-            --bg-light: #F3F4F6;
+            --sunset-orange: #FF6B35;
+            --sunset-pink: #FF8BA0;
+            --sunset-yellow: #FFD23F;
+            --sunset-coral: #FF9770;
+            --sunset-deep: #D94A3D;
+            --bg-dark: #5A3A31;
+            --bg-light: #FFF4E6;
         }
         
         body {
@@ -21,6 +23,7 @@
             overflow-x: hidden;
             margin: 0;
             padding: 0;
+            background: linear-gradient(180deg, #FFB6A3 0%, #FF8E72 50%, #FF6B4A 100%);
         }
         
         .background-container {
@@ -31,6 +34,7 @@
             height: 100vh;
             z-index: -1;
             overflow: hidden;
+            background: linear-gradient(180deg, #C74B50 0%, #FF6B4A 30%, #FF8E72 60%, #FFB6A3 100%);
         }
         
         .background-image {
@@ -56,6 +60,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            background: linear-gradient(180deg, rgba(199, 75, 80, 0.3) 0%, rgba(255, 107, 74, 0.3) 100%);
         }
         
         .hero-section::before {
@@ -65,7 +70,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%23ffffff" fill-opacity="0.1" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,122.7C672,117,768,139,864,138.7C960,139,1056,117,1152,106.7C1248,96,1344,96,1392,96L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>') no-repeat bottom;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%23FF8E72" fill-opacity="0.2" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,122.7C672,117,768,139,864,138.7C960,139,1056,117,1152,106.7C1248,96,1344,96,1392,96L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>') no-repeat bottom;
             background-size: cover;
             pointer-events: none;
         }
@@ -74,14 +79,14 @@
             font-size: 2rem;
             font-weight: 800;
             color: white;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            text-shadow: 2px 2px 4px rgba(90, 58, 49, 0.4);
         }
         
         .hero-title {
             font-size: 4rem;
             font-weight: 900;
             color: white;
-            text-shadow: 3px 3px 6px rgba(0,0,0,0.3);
+            text-shadow: 3px 3px 6px rgba(90, 58, 49, 0.4);
             margin-bottom: 30px;
             animation: fadeInUp 1s ease;
         }
@@ -105,10 +110,10 @@
         }
         
         .pachy-card {
-            background: white;
+            background: linear-gradient(135deg, rgba(255, 244, 230, 0.95) 0%, rgba(255, 235, 205, 0.95) 100%);
             border-radius: 20px;
             padding: 30px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            box-shadow: 0 10px 30px rgba(90, 58, 49, 0.3);
             transition: transform 0.3s ease;
             margin-bottom: 30px;
         }
@@ -123,23 +128,24 @@
             color: white;
             margin-bottom: 50px;
             text-align: center;
+            text-shadow: 3px 3px 6px rgba(90, 58, 49, 0.4);
         }
         
         .vision-section {
-            background: linear-gradient(135deg, rgba(240, 147, 251, 0.9) 0%, rgba(245, 87, 108, 0.9) 100%);
+            background: linear-gradient(135deg, rgba(255, 142, 114, 0.95) 0%, rgba(255, 182, 163, 0.95) 100%);
             padding: 100px 0;
             position: relative;
         }
         
         .collection-section {
-            background: white;
+            background: linear-gradient(135deg, rgba(255, 244, 230, 0.98) 0%, rgba(255, 235, 205, 0.98) 100%);
             padding: 180px 0 100px;
             position: relative;
             margin-top: -80px;
         }
         
         .what-section {
-            background: white;
+            background: linear-gradient(135deg, rgba(255, 244, 230, 0.98) 0%, rgba(255, 235, 205, 0.98) 100%);
             padding: 100px 0;
             position: relative;
         }
@@ -147,13 +153,13 @@
         .what-section h2 {
             font-size: 3.5rem;
             font-weight: 900;
-            color: #1F2937;
+            color: var(--sunset-deep);
             margin-bottom: 30px;
         }
         
         .what-section p {
             font-size: 1.2rem;
-            color: #4B5563;
+            color: var(--bg-dark);
             line-height: 1.8;
         }
         
@@ -164,7 +170,7 @@
         }
         
         .vision-section-new {
-            background: white;
+            background: linear-gradient(135deg, rgba(255, 244, 230, 0.98) 0%, rgba(255, 235, 205, 0.98) 100%);
             padding: 100px 0;
             position: relative;
         }
@@ -172,44 +178,44 @@
         .vision-section-new h2 {
             font-size: 3.5rem;
             font-weight: 900;
-            color: #1F2937;
+            color: var(--sunset-deep);
             margin-bottom: 30px;
             text-align: right;
         }
         
         .vision-section-new p {
             font-size: 1.2rem;
-            color: #4B5563;
+            color: var(--bg-dark);
             line-height: 1.8;
             text-align: right;
         }
         
         .collection-section-old {
-            background: linear-gradient(135deg, rgba(79, 172, 254, 0.9) 0%, rgba(0, 242, 254, 0.9) 100%);
+            background: linear-gradient(135deg, rgba(255, 211, 63, 0.95) 0%, rgba(255, 151, 112, 0.95) 100%);
             padding: 100px 0;
             position: relative;
         }
         
         .why-section {
-            background: linear-gradient(135deg, rgba(67, 233, 123, 0.9) 0%, rgba(56, 249, 215, 0.9) 100%);
+            background: linear-gradient(135deg, rgba(255, 142, 114, 0.95) 0%, rgba(255, 107, 74, 0.95) 100%);
             padding: 100px 0;
             position: relative;
         }
         
         .products-section {
-            background: linear-gradient(135deg, rgba(250, 112, 154, 0.9) 0%, rgba(254, 225, 64, 0.9) 100%);
+            background: linear-gradient(135deg, rgba(255, 139, 160, 0.95) 0%, rgba(255, 182, 163, 0.95) 100%);
             padding: 100px 0;
             position: relative;
         }
         
         .collaboration-section {
-            background: linear-gradient(135deg, rgba(48, 207, 208, 0.9) 0%, rgba(51, 8, 103, 0.9) 100%);
+            background: linear-gradient(135deg, rgba(217, 74, 61, 0.95) 0%, rgba(199, 75, 80, 0.95) 100%);
             padding: 100px 0;
             position: relative;
         }
         
         .cta-section {
-            background: linear-gradient(135deg, rgba(168, 237, 234, 0.9) 0%, rgba(254, 214, 227, 0.9) 100%);
+            background: linear-gradient(135deg, rgba(255, 244, 230, 0.98) 0%, rgba(255, 211, 63, 0.8) 100%);
             padding: 100px 0;
             position: relative;
         }
@@ -220,24 +226,25 @@
             font-weight: 700;
             border-radius: 50px;
             border: none;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #FF6B35 0%, #D94A3D 100%);
             color: white;
             transition: all 0.3s ease;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            box-shadow: 0 5px 15px rgba(90, 58, 49, 0.3);
         }
         
         .btn-custom:hover {
             transform: scale(1.05);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+            box-shadow: 0 8px 25px rgba(90, 58, 49, 0.4);
+            background: linear-gradient(135deg, #FF8E72 0%, #FF6B35 100%);
         }
         
         .feature-box {
-            background: rgba(255,255,255,0.2);
+            background: rgba(255, 255, 255, 0.25);
             border-radius: 15px;
             padding: 30px;
             margin-bottom: 20px;
             backdrop-filter: blur(10px);
-            border: 2px solid rgba(255,255,255,0.3);
+            border: 2px solid rgba(255, 244, 230, 0.4);
         }
         
         .pachy-emoji {
@@ -259,28 +266,28 @@
         }
         
         .bullet-point i {
-            color: #fbbf24;
+            color: #FFD23F;
             margin-right: 15px;
             font-size: 1.5rem;
         }
         
         .stats-box {
-            background: white;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 244, 230, 0.95) 100%);
             border-radius: 15px;
             padding: 40px;
             text-align: center;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            box-shadow: 0 10px 30px rgba(90, 58, 49, 0.3);
         }
         
         .stats-number {
             font-size: 3rem;
             font-weight: 900;
-            color: var(--primary-purple);
+            color: var(--sunset-deep);
         }
         
         .stats-label {
             font-size: 1.2rem;
-            color: #6B7280;
+            color: var(--bg-dark);
             margin-top: 10px;
         }
         
@@ -305,6 +312,7 @@
             font-weight: 600;
             margin: 0 15px;
             font-size: 1rem;
+            text-shadow: 1px 1px 3px rgba(90, 58, 49, 0.4);
         }
         
         .hero-content {
@@ -318,16 +326,17 @@
             font-size: 3.5rem;
             font-weight: 900;
             color: white;
-            text-shadow: 3px 3px 6px rgba(0,0,0,0.3);
+            text-shadow: 3px 3px 6px rgba(90, 58, 49, 0.4);
             margin-bottom: 20px;
             line-height: 1.1;
         }
         
         .hero-main-subtitle {
             font-size: 1.3rem;
-            color: rgba(255,255,255,0.9);
+            color: rgba(255,255,255,0.95);
             margin-bottom: 30px;
             line-height: 1.5;
+            text-shadow: 1px 1px 3px rgba(90, 58, 49, 0.3);
         }
         
         .hero-logo {
@@ -335,6 +344,7 @@
             height: auto;
             margin-bottom: 30px;
             animation: fadeIn 1s ease;
+            filter: drop-shadow(2px 2px 4px rgba(90, 58, 49, 0.3));
         }
         
         .hero-overlay-image {
@@ -389,7 +399,7 @@
         }
         
         footer {
-            background: var(--bg-dark);
+            background: linear-gradient(135deg, rgba(90, 58, 49, 0.95) 0%, rgba(199, 75, 80, 0.95) 100%);
             color: white;
             padding: 40px 0;
             text-align: center;
@@ -619,12 +629,12 @@
         <!-- CTA Section -->
         <section class="cta-section" id="join">
             <div class="container text-center">
-                <h2 class="section-title" style="color: #1F2937;">Pachy is ready to meet its holders.</h2>
-                <h3 style="font-size: 2rem; color: #1F2937; margin-bottom: 40px;">Will you be one of them?</h3>
+                <h2 class="section-title" style="color: var(--sunset-deep);">Pachy is ready to meet its holders.</h2>
+                <h3 style="font-size: 2rem; color: var(--sunset-deep); margin-bottom: 40px;">Will you be one of them?</h3>
                 <div class="row justify-content-center">
                     <div class="col-lg-6">
                         <form id="waitlist-form">
-                            <div class="input-group mb-3" style="box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                            <div class="input-group mb-3" style="box-shadow: 0 5px 15px rgba(90, 58, 49, 0.3);">
                                 <input type="email" class="form-control form-control-lg" placeholder="Your email" id="email" name="email" required>
                                 <button class="btn btn-custom" type="submit">Join the Waitlist</button>
                             </div>
@@ -661,10 +671,9 @@
             });
         });
 
-        // Navbar scroll effect - Maintenant complètement transparente
+        // Navbar scroll effect
         window.addEventListener('scroll', function() {
             const navbar = document.querySelector('.navbar-custom');
-            // La navbar reste toujours transparente, pas d'effet au scroll
             navbar.classList.remove('scrolled');
         });
 
