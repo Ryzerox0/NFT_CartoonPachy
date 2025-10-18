@@ -291,7 +291,7 @@
             position: absolute;
             top: 50%;
             right: 0;
-            transform: translateY(-500%);
+            transform: translateY(-50%);
             max-width: 50%;
             height: auto;
             z-index: 2;
@@ -359,6 +359,25 @@
             position: relative;
             z-index: 3;
         }
+        
+        /* NOUVEAU STYLE POUR L'IMAGE ENTRE LES SECTIONS */
+        .image-between-sections {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 50px 0;
+            background: transparent;
+            position: relative;
+            z-index: 5;
+        }
+        
+        .image-between-sections img {
+            max-width: 80%;
+            height: auto;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+            animation: fadeIn 1.5s ease;
+        }
     </style>
 </head>
 <body>
@@ -409,9 +428,13 @@
                 </div>
             </div>
             
-            <!-- Image de superposition 10en1.png -->
-            <img src="10en1.png" alt="CartoonPachy Characters" class="overlay-image">
+            <!-- SUPPRIMÉ: Image de superposition 10en1.png (déplacée plus bas) -->
         </section>
+
+        <!-- NOUVELLE SECTION: Image entre Hero et What is -->
+        <div class="image-between-sections">
+            <img src="10en1.png" alt="CartoonPachy Characters">
+        </div>
 
         <!-- What is Section -->
         <section class="what-is-section" id="vision">
