@@ -174,6 +174,14 @@
             font-weight: 900;
             color: #1F2937;
             margin-bottom: 30px;
+            text-align: right;
+        }
+        
+        .vision-section-new p {
+            font-size: 1.2rem;
+            color: #4B5563;
+            line-height: 1.8;
+            text-align: right;
         }
         
         .collection-section-old {
@@ -278,7 +286,7 @@
         
         .navbar-custom {
             background: transparent !important;
-            backdrop-filter: none;
+            backdrop-filter: none !important;
             padding: 15px 0;
             transition: all 0.3s ease;
             position: fixed;
@@ -288,8 +296,8 @@
         }
         
         .navbar-custom.scrolled {
-            background: rgba(0,0,0,0.1) !important;
-            backdrop-filter: blur(10px);
+            background: transparent !important;
+            backdrop-filter: none !important;
         }
         
         .navbar-custom a {
@@ -363,6 +371,11 @@
             .collection-section {
                 padding: 100px 0;
                 margin-top: 0;
+            }
+            
+            .vision-section-new h2,
+            .vision-section-new p {
+                text-align: left;
             }
         }
         
@@ -474,10 +487,10 @@
         </section>
 
         <!-- Vision Section -->
-        <section class="vision-section-new">
+        <section class="vision-section-new" id="vision">
             <div class="container">
                 <div class="row align-items-center">
-                    <div class="col-lg-7 order-lg-2 order-1">
+                    <div class="col-lg-7 offset-lg-5">
                         <h2>VISION</h2>
                         <p>
                             Creative and full of character, Cartoon Pachys spread joy and imagination wherever they go. Each collectible is 
@@ -648,14 +661,11 @@
             });
         });
 
-        // Navbar scroll effect
+        // Navbar scroll effect - Maintenant complètement transparente
         window.addEventListener('scroll', function() {
             const navbar = document.querySelector('.navbar-custom');
-            if (window.scrollY > 50) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
-            }
+            // La navbar reste toujours transparente, pas d'effet au scroll
+            navbar.classList.remove('scrolled');
         });
 
         // Current year for footer
