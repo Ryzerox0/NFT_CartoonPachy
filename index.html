@@ -88,25 +88,12 @@
             color: white;
             text-shadow: 3px 3px 6px rgba(90, 58, 49, 0.4);
             margin-bottom: 30px;
-            animation: fadeInUp 1s ease;
         }
         
         .hero-subtitle {
             font-size: 1.5rem;
             color: rgba(255,255,255,0.95);
             margin-bottom: 40px;
-            animation: fadeInUp 1.2s ease;
-        }
-        
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
         }
         
         .pachy-card {
@@ -249,12 +236,6 @@
         
         .pachy-emoji {
             font-size: 4rem;
-            animation: bounce 2s infinite;
-        }
-        
-        @keyframes bounce {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-20px); }
         }
         
         .bullet-point {
@@ -343,7 +324,6 @@
             max-width: 500px;
             height: auto;
             margin-bottom: 40px;
-            animation: fadeIn 1s ease;
             filter: drop-shadow(2px 2px 4px rgba(90, 58, 49, 0.3));
         }
         
@@ -355,12 +335,7 @@
             width: 35%;
             height: auto;
             z-index: 100;
-            animation: fadeIn 1.5s ease, float 3s ease-in-out infinite;
-        }
-        
-        @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-15px); }
+            border-radius: 20px;
         }
         
         @media (max-width: 992px) {
@@ -372,6 +347,7 @@
                 display: block;
                 max-width: 80%;
                 width: 80%;
+                border-radius: 20px;
             }
             
             .hero-section {
@@ -394,15 +370,6 @@
             
             .hero-logo {
                 max-width: 350px;
-            }
-        }
-        
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
             }
         }
         
