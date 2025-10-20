@@ -323,7 +323,7 @@
         }
         
         .hero-main-title {
-            font-size: 3.5rem;
+            font-size: 4rem;
             font-weight: 900;
             color: white;
             text-shadow: 3px 3px 6px rgba(90, 58, 49, 0.4);
@@ -332,7 +332,7 @@
         }
         
         .hero-main-subtitle {
-            font-size: 1.3rem;
+            font-size: 1.5rem;
             color: rgba(255,255,255,0.95);
             margin-bottom: 30px;
             line-height: 1.5;
@@ -340,43 +340,22 @@
         }
         
         .hero-logo {
-            max-width: 400px;
+            max-width: 500px;
             height: auto;
-            margin-bottom: 30px;
+            margin-bottom: 40px;
             animation: fadeIn 1s ease;
             filter: drop-shadow(2px 2px 4px rgba(90, 58, 49, 0.3));
         }
         
         .hero-overlay-image {
             position: absolute;
-            bottom: -380px;
-            right: 10%;
-            max-width: 380px;
-            width: 30%;
+            bottom: -400px;
+            right: 8%;
+            max-width: 500px;
+            width: 35%;
             height: auto;
             z-index: 100;
             animation: fadeIn 1.5s ease, float 3s ease-in-out infinite;
-            /* Styles de débogage */
-            border: 2px solid rgba(255,255,255,0.3);
-            background-color: rgba(255,255,255,0.1);
-        }
-        
-        /* Style de secours si l'image ne charge pas */
-        .hero-overlay-image::before {
-            content: "20 Personnages Pachy";
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            color: white;
-            font-weight: bold;
-            font-size: 1.2rem;
-            text-align: center;
-            display: none;
-        }
-        
-        .hero-overlay-image.error::before {
-            display: block;
         }
         
         @keyframes float {
@@ -407,6 +386,14 @@
             .vision-section-new h2,
             .vision-section-new p {
                 text-align: left;
+            }
+            
+            .hero-main-title {
+                font-size: 3rem;
+            }
+            
+            .hero-logo {
+                max-width: 350px;
             }
         }
         
@@ -502,7 +489,7 @@
                     <div class="col-lg-6">
                         <div class="hero-content">
                             <!-- Logo au-dessus du texte -->
-                            <img src="CartoonPachyTitre.png" alt="CartoonPachy" class="hero-logo" onerror="this.style.display='none'">
+                            <img src="CartoonPachyTitre.png" alt="CartoonPachy" class="hero-logo">
                             
                             <h1 class="hero-main-title">
                                 LE MINT ARRIVE<br>BIENTÔT. REJOIGNEZ LA<br>LISTE D'ATTENTE!
@@ -516,7 +503,7 @@
                 </div>
             </div>
             <!-- Image en superposition - Positionnée plus bas -->
-            <img src="20en1.png" alt="20 Personnages CartoonPachy" class="hero-overlay-image" id="main-image">
+            <img src="20en1.png" alt="20 Personnages CartoonPachy" class="hero-overlay-image">
         </section>
 
         <!-- What Are Section -->
@@ -732,42 +719,6 @@
             } else {
                 document.getElementById('form-message').innerHTML = '<div class="alert alert-danger">❌ Email invalide</div>';
             }
-        });
-
-        // Gestion des erreurs d'images
-        document.addEventListener('DOMContentLoaded', function() {
-            const mainImage = document.getElementById('main-image');
-            
-            // Vérifier si l'image principale charge
-            mainImage.onerror = function() {
-                console.error('Erreur de chargement de l\'image _20en1.png');
-                this.classList.add('error');
-                
-                // Essayer des alternatives
-                const alternatives = ['20en1.png', '10en1.png', 'pachy.png'];
-                let currentIndex = 0;
-                
-                function tryNextAlternative() {
-                    if (currentIndex < alternatives.length) {
-                        this.src = alternatives[currentIndex];
-                        currentIndex++;
-                    }
-                }
-                
-                tryNextAlternative.call(this);
-            };
-            
-            mainImage.onload = function() {
-                console.log('Image chargée avec succès:', this.src);
-                this.classList.remove('error');
-            };
-            
-            // Vérifier aussi le logo
-            const logo = document.querySelector('.hero-logo');
-            logo.onerror = function() {
-                console.error('Erreur de chargement du logo');
-                this.style.display = 'none';
-            };
         });
     </script>
 </body>
