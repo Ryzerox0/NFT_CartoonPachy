@@ -55,7 +55,7 @@
         .hero-section {
             height: 100vh;
             position: relative;
-            overflow: hidden;
+            overflow: visible; /* CHANGEMENT IMPORTANT */
             display: flex;
             align-items: center;
             justify-content: center;
@@ -133,6 +133,7 @@
             background: linear-gradient(135deg, rgba(255, 244, 230, 0.98) 0%, rgba(255, 235, 205, 0.98) 100%);
             padding: 100px 0;
             position: relative;
+            z-index: 50; /* Z-index inférieur à l'image overlay */
         }
         
         .what-section h2 {
@@ -158,6 +159,7 @@
             background: linear-gradient(135deg, rgba(255, 244, 230, 0.98) 0%, rgba(255, 235, 205, 0.98) 100%);
             padding: 100px 0;
             position: relative;
+            z-index: 50;
         }
         
         .vision-section-new h2 {
@@ -179,30 +181,35 @@
             background: linear-gradient(135deg, rgba(255, 211, 63, 0.95) 0%, rgba(255, 151, 112, 0.95) 100%);
             padding: 100px 0;
             position: relative;
+            z-index: 50;
         }
         
         .why-section {
             background: linear-gradient(135deg, rgba(255, 142, 114, 0.95) 0%, rgba(255, 107, 74, 0.95) 100%);
             padding: 100px 0;
             position: relative;
+            z-index: 50;
         }
         
         .products-section {
             background: linear-gradient(135deg, rgba(255, 139, 160, 0.95) 0%, rgba(255, 182, 163, 0.95) 100%);
             padding: 100px 0;
             position: relative;
+            z-index: 50;
         }
         
         .collaboration-section {
             background: linear-gradient(135deg, rgba(217, 74, 61, 0.95) 0%, rgba(199, 75, 80, 0.95) 100%);
             padding: 100px 0;
             position: relative;
+            z-index: 50;
         }
         
         .cta-section {
             background: linear-gradient(135deg, rgba(255, 244, 230, 0.98) 0%, rgba(255, 211, 63, 0.8) 100%);
             padding: 100px 0;
             position: relative;
+            z-index: 50;
         }
         
         .btn-custom {
@@ -325,15 +332,24 @@
             filter: drop-shadow(2px 2px 4px rgba(90, 58, 49, 0.3));
         }
         
+        /* CORRECTIONS PRINCIPALES POUR HERO OVERLAY IMAGE */
         .hero-overlay-image {
             position: absolute;
-            bottom: -350px;
-            right: 8%;
-            max-width: 700px;
-            width: 35%;
+            bottom: -300px; /* Ajusté pour mieux chevaucher */
+            right: 5%;
+            max-width: 650px;
+            width: 40%;
             height: auto;
-            z-index: 100;
+            z-index: 1000; /* Z-index augmenté */
             border-radius: 20px;
+            filter: drop-shadow(0 15px 30px rgba(0,0,0,0.4));
+            pointer-events: none; /* Évite les problèmes d'interaction */
+        }
+        
+        /* Espace supplémentaire pour la section what-section */
+        .what-section {
+            padding-top: 150px; /* Plus d'espace en haut pour l'image */
+            margin-top: -50px; /* Remonte légèrement la section */
         }
         
         @media (max-width: 992px) {
@@ -341,17 +357,19 @@
                 position: relative;
                 bottom: 0;
                 right: 0;
-                margin: 30px auto;
+                margin: -80px auto 30px; /* Négatif pour remonter l'image */
                 display: block;
-                max-width: 80%;
-                width: 80%;
+                max-width: 85%;
+                width: 85%;
                 border-radius: 20px;
+                z-index: 1000;
             }
             
             .hero-section {
                 height: auto;
                 min-height: 100vh;
-                padding: 100px 0 50px;
+                padding: 100px 0 20px; /* Moins de padding en bas */
+                overflow: hidden; /* Remettre hidden sur mobile */
             }
             
             .hero-main-title {
@@ -361,6 +379,11 @@
             .hero-logo {
                 max-width: 350px;
             }
+            
+            .what-section {
+                padding-top: 100px;
+                margin-top: 0;
+            }
         }
         
         footer {
@@ -369,6 +392,7 @@
             padding: 40px 0;
             text-align: center;
             position: relative;
+            z-index: 50;
         }
         
         .navbar-toggler {
@@ -459,7 +483,7 @@
                     </div>
                 </div>
             </div>
-            <!-- Image en superposition - Positionnée plus bas -->
+            <!-- Image en superposition - CORRIGÉE -->
             <img src="20en1.png" alt="20 Personnages CartoonPachy" class="hero-overlay-image">
         </section>
 
