@@ -356,6 +356,27 @@
             height: auto;
             z-index: 100;
             animation: fadeIn 1.5s ease, float 3s ease-in-out infinite;
+            /* Styles de débogage */
+            border: 2px solid rgba(255,255,255,0.3);
+            background-color: rgba(255,255,255,0.1);
+        }
+        
+        /* Style de secours si l'image ne charge pas */
+        .hero-overlay-image::before {
+            content: "20 Personnages Pachy";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-weight: bold;
+            font-size: 1.2rem;
+            text-align: center;
+            display: none;
+        }
+        
+        .hero-overlay-image.error::before {
+            display: block;
         }
         
         @keyframes float {
@@ -481,7 +502,7 @@
                     <div class="col-lg-6">
                         <div class="hero-content">
                             <!-- Logo au-dessus du texte -->
-                            <img src="CartoonPachyTitre.png" alt="CartoonPachy" class="hero-logo">
+                            <img src="CartoonPachyTitre.png" alt="CartoonPachy" class="hero-logo" onerror="this.style.display='none'">
                             
                             <h1 class="hero-main-title">
                                 LE MINT ARRIVE<br>BIENTÔT. REJOIGNEZ LA<br>LISTE D'ATTENTE!
@@ -495,7 +516,7 @@
                 </div>
             </div>
             <!-- Image en superposition - Positionnée plus bas -->
-            <img src="_20en1.png" alt="Personnages CartoonPachy" class="hero-overlay-image">
+            <img src="_20en1.png" alt="20 Personnages CartoonPachy" class="hero-overlay-image" id="main-image">
         </section>
 
         <!-- What Are Section -->
@@ -711,6 +732,42 @@
             } else {
                 document.getElementById('form-message').innerHTML = '<div class="alert alert-danger">❌ Email invalide</div>';
             }
+        });
+
+        // Gestion des erreurs d'images
+        document.addEventListener('DOMContentLoaded', function() {
+            const mainImage = document.getElementById('main-image');
+            
+            // Vérifier si l'image principale charge
+            mainImage.onerror = function() {
+                console.error('Erreur de chargement de l\'image _20en1.png');
+                this.classList.add('error');
+                
+                // Essayer des alternatives
+                const alternatives = ['20en1.png', '10en1.png', 'pachy.png'];
+                let currentIndex = 0;
+                
+                function tryNextAlternative() {
+                    if (currentIndex < alternatives.length) {
+                        this.src = alternatives[currentIndex];
+                        currentIndex++;
+                    }
+                }
+                
+                tryNextAlternative.call(this);
+            };
+            
+            mainImage.onload = function() {
+                console.log('Image chargée avec succès:', this.src);
+                this.classList.remove('error');
+            };
+            
+            // Vérifier aussi le logo
+            const logo = document.querySelector('.hero-logo');
+            logo.onerror = function() {
+                console.error('Erreur de chargement du logo');
+                this.style.display = 'none';
+            };
         });
     </script>
 </body>
