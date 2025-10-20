@@ -428,6 +428,21 @@
             height: 50px;
             width: auto;
         }
+        
+        /* Correction pour le défilement fluide */
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        /* Correction pour la navbar sur mobile */
+        @media (max-width: 991px) {
+            .navbar-collapse {
+                background: rgba(90, 58, 49, 0.9);
+                border-radius: 10px;
+                padding: 15px;
+                margin-top: 10px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -446,12 +461,13 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto">
-                        <li class="nav-item"><a class="nav-link" href="#vision">Accueil</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#collection">À propos</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#why">Collection</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#products">Pourquoi Pachy</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#collaboration">Produits</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#join">Collaboration</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#vision">Notre Vision</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#collection">Qu'est-ce que c'est</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#stats">La Collection</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#why">Pourquoi Pachy</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#products">Produits</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#collaboration">Collaboration</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#join">Rejoindre</a></li>
                     </ul>
                 </div>
             </div>
