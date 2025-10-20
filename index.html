@@ -332,24 +332,23 @@
             filter: drop-shadow(2px 2px 4px rgba(90, 58, 49, 0.3));
         }
         
-        /* CORRECTIONS PRINCIPALES POUR HERO OVERLAY IMAGE */
+        
         .hero-overlay-image {
             position: absolute;
-            bottom: -300px; /* Ajusté pour mieux chevaucher */
+            bottom: -375px; /* Ajusté pour mieux chevaucher */
             right: 5%;
             max-width: 650px;
             width: 40%;
             height: auto;
-            z-index: 1000; /* Z-index augmenté */
+            z-index: 1000; 
             border-radius: 20px;
             filter: drop-shadow(0 15px 30px rgba(0,0,0,0.4));
-            pointer-events: none; /* Évite les problèmes d'interaction */
+            pointer-events: none; 
         }
         
         /* Espace supplémentaire pour la section what-section */
         .what-section {
             padding-top: 150px; /* Plus d'espace en haut pour l'image */
-            margin-top: -50px; /* Remonte légèrement la section */
         }
         
         @media (max-width: 992px) {
