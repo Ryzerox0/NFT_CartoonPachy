@@ -96,7 +96,7 @@
         }
         
         .pachy-card {
-            background: rgba(255, 244, 230, 0.95);
+            background: #FFF4E6;
             border-radius: 20px;
             padding: 30px;
             box-shadow: 0 10px 30px rgba(90, 58, 49, 0.3);
@@ -112,25 +112,25 @@
             font-size: 3rem;
             font-weight: 800;
             color: white;
-            margin-bottom: 50px;
+            margin-bottom: 30px;
             text-align: center;
             text-shadow: 3px 3px 6px rgba(90, 58, 49, 0.4);
         }
         
         .vision-section {
-            background: rgba(255, 142, 114, 0.95);
+            background: #FF8E72;
             padding: 100px 0;
             position: relative;
         }
         
         .collection-section {
-            background: rgba(255, 244, 230, 0.98);
+            background: #FFF4E6;
             padding: 100px 0;
             position: relative;
         }
         
         .what-section {
-            background: rgba(255, 244, 230, 0.98);
+            background: #FFF4E6;
             padding: 100px 0;
             position: relative;
             z-index: 50;
@@ -158,7 +158,7 @@
         }
         
         .vision-section-new {
-            background: rgba(255, 244, 230, 0.98);
+            background: #FFF4E6;
             padding: 100px 0;
             position: relative;
             z-index: 50;
@@ -180,35 +180,35 @@
         }
         
         .collection-section-old {
-            background: rgba(255, 211, 63, 0.95);
+            background: #FFD23F;
             padding: 100px 0;
             position: relative;
             z-index: 50;
         }
         
         .why-section {
-            background: rgba(255, 142, 114, 0.95);
+            background: #FF8E72;
             padding: 100px 0;
             position: relative;
             z-index: 50;
         }
         
         .products-section {
-            background: rgba(255, 139, 160, 0.95);
+            background: #FF8BA0;
             padding: 100px 0;
             position: relative;
             z-index: 50;
         }
         
         .collaboration-section {
-            background: rgba(217, 74, 61, 0.95);
+            background: #D94A3D;
             padding: 100px 0;
             position: relative;
             z-index: 50;
         }
         
         .cta-section {
-            background: rgba(255, 244, 230, 0.98);
+            background: #FFF4E6;
             padding: 100px 0;
             position: relative;
             z-index: 50;
@@ -233,11 +233,10 @@
         }
         
         .feature-box {
-            background: rgba(255, 255, 255, 0.25);
+            background: rgba(255, 255, 255, 0.9);
             border-radius: 15px;
             padding: 30px;
             margin-bottom: 20px;
-            backdrop-filter: blur(10px);
             border: 2px solid rgba(255, 244, 230, 0.4);
         }
         
@@ -260,7 +259,7 @@
         }
         
         .stats-box {
-            background: rgba(255, 255, 255, 0.95);
+            background: #FFFFFF;
             border-radius: 15px;
             padding: 40px;
             text-align: center;
@@ -351,16 +350,13 @@
             padding-top: 150px;
         }
         
-        /* Styles pour l'image de collection - FOND UNIFORME ET SANS BORDURE */
+        /* Styles pour l'image de collection - SANS FOND ET SANS BORDURE */
         .collection-image-container {
             text-align: center;
-            margin-top: 40px;
-            background: rgba(255, 211, 63, 0.95);
-            padding: 20px;
-            border-radius: 15px;
-            max-width: 961px;
-            margin-left: auto;
-            margin-right: auto;
+            margin-top: 20px;
+            margin-bottom: 40px;
+            background: transparent;
+            padding: 0;
         }
         
         .collection-image {
@@ -405,15 +401,10 @@
                 padding-top: 100px;
                 margin-top: 0;
             }
-            
-            .collection-image-container {
-                padding: 15px;
-                margin: 20px 10px;
-            }
         }
         
         footer {
-            background: rgba(90, 58, 49, 0.95);
+            background: #5A3A31;
             color: white;
             padding: 40px 0;
             text-align: center;
@@ -553,6 +544,18 @@
         <section class="collection-section-old" id="stats">
             <div class="container">
                 <h2 class="section-title">LA COLLECTION</h2>
+                
+                <!-- Image de collection juste en dessous du titre -->
+                <div class="collection-image-container">
+                    <img 
+                        loading="lazy" 
+                        src="collection_4_NFT.png" 
+                        alt="Collection CartoonPachy NFTs" 
+                        class="collection-image" 
+                        width="921" 
+                        height="381">
+                </div>
+
                 <div class="row">
                     <div class="col-md-4">
                         <div class="stats-box">
@@ -574,18 +577,7 @@
                     </div>
                 </div>
 
-                <!-- Image de collection avec fond uniforme et sans bordure -->
-                <div class="collection-image-container">
-                    <img 
-                        loading="lazy" 
-                        src="collection_4_NFT.png" 
-                        alt="Collection CartoonPachy NFTs" 
-                        class="collection-image" 
-                        width="921" 
-                        height="381">
-                </div>
-
-                <!-- Texte descriptif sous l'image -->
+                <!-- Texte descriptif sous les stats -->
                 <div class="row mt-4">
                     <div class="col-12 text-center">
                         <div class="feature-box" style="background: rgba(255,255,255,0.9); max-width: 800px; margin: 0 auto;">
