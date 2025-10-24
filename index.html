@@ -351,24 +351,18 @@
             padding-top: 150px;
         }
         
-        /* Styles pour les images NFT */
-        .nft-card {
-            transition: transform 0.3s ease;
-            border-radius: 15px;
-            display: inline-block;
+        /* Styles pour l'image de collection */
+        .collection-image-container {
+            text-align: center;
+            margin-top: 40px;
         }
         
-        .nft-card:hover {
-            transform: translateY(-5px);
-        }
-        
-        .nft-image {
-            width: 150px;
-            height: 150px;
-            border-radius: 15px;
+        .collection-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
             object-fit: cover;
-            border: 4px solid white;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
         }
         
         @media (max-width: 992px) {
@@ -402,11 +396,6 @@
             .what-section {
                 padding-top: 100px;
                 margin-top: 0;
-            }
-            
-            .nft-image {
-                width: 120px;
-                height: 120px;
             }
         }
         
@@ -572,11 +561,27 @@
                     </div>
                 </div>
 
-                <!-- Section avec texte et 4 images comme sur la photo -->
-                <div class="row mt-5 align-items-center">
-                    <!-- Texte à gauche -->
-                    <div class="col-lg-6">
-                        <div class="feature-box" style="background: rgba(255,255,255,0.9);">
+                <!-- Image de collection comme sur la photo -->
+                <div class="collection-image-container">
+                    <img 
+                        loading="lazy" 
+                        sizes="921px" 
+                        srcset="
+                            https://static.wixstatic.com/media/1625ad_2fb378ac1f9a4cd092d2f719b440ffdb~mv2.png/v1/fill/w_921,h_381,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/collection_gotchis.png 1x, 
+                            https://static.wixstatic.com/media/1625ad_2fb378ac1f9a4cd092d2f719b440ffdb~mv2.png/v1/fill/w_1842,h_762,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/collection_gotchis.png 2x
+                        " 
+                        src="https://static.wixstatic.com/media/1625ad_2fb378ac1f9a4cd092d2f719b440ffdb~mv2.png/v1/fill/w_921,h_381,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/collection_gotchis.png" 
+                        alt="Collection CartoonPachy NFTs" 
+                        style="object-fit:cover" 
+                        class="collection-image" 
+                        width="921" 
+                        height="381">
+                </div>
+
+                <!-- Texte descriptif sous l'image -->
+                <div class="row mt-4">
+                    <div class="col-12 text-center">
+                        <div class="feature-box" style="background: rgba(255,255,255,0.9); max-width: 800px; margin: 0 auto;">
                             <h4 style="color: var(--sunset-deep); margin-bottom: 15px; font-size: 2rem;">7,777 PFP NFTs</h4>
                             <p style="color: var(--bg-dark); font-size: 1.5rem; margin-bottom: 15px; font-weight: bold;">
                                 Chacun est unique
@@ -585,34 +590,6 @@
                                 Traits et raretés célébrant<br>
                                 les multiples personnalités de Dino
                             </p>
-                        </div>
-                    </div>
-                    
-                    <!-- 4 images à droite -->
-                    <div class="col-lg-6">
-                        <div class="row g-3">
-                            <!-- Ligne du haut -->
-                            <div class="col-6 text-center">
-                                <div class="nft-card">
-                                    <img src="5.png" alt="NFT 5" class="nft-image">
-                                </div>
-                            </div>
-                            <div class="col-6 text-center">
-                                <div class="nft-card">
-                                    <img src="6.png" alt="NFT 6" class="nft-image">
-                                </div>
-                            </div>
-                            <!-- Ligne du bas -->
-                            <div class="col-6 text-center">
-                                <div class="nft-card">
-                                    <img src="7.png" alt="NFT 7" class="nft-image">
-                                </div>
-                            </div>
-                            <div class="col-6 text-center">
-                                <div class="nft-card">
-                                    <img src="10.png" alt="NFT 10" class="nft-image">
-                                </div>
-                            </div>
                         </div>
                     </div>
                 </div>
