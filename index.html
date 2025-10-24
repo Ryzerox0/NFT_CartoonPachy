@@ -55,7 +55,7 @@
         .hero-section {
             height: 100vh;
             position: relative;
-            overflow: visible; /* CHANGEMENT IMPORTANT */
+            overflow: visible;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -133,7 +133,7 @@
             background: linear-gradient(135deg, rgba(255, 244, 230, 0.98) 0%, rgba(255, 235, 205, 0.98) 100%);
             padding: 100px 0;
             position: relative;
-            z-index: 50; /* Z-index inférieur à l'image overlay */
+            z-index: 50;
         }
         
         .what-section h2 {
@@ -334,10 +334,9 @@
             filter: drop-shadow(2px 2px 4px rgba(90, 58, 49, 0.3));
         }
         
-        
         .hero-overlay-image {
             position: absolute;
-            bottom: -400px; /* Ajusté pour mieux chevaucher */
+            bottom: -400px;
             right: 5%;
             max-width: 650px;
             width: 40%;
@@ -348,9 +347,28 @@
             pointer-events: none; 
         }
         
-        /* Espace supplémentaire pour la section what-section */
         .what-section {
-            padding-top: 150px; /* Plus d'espace en haut pour l'image */
+            padding-top: 150px;
+        }
+        
+        /* Styles pour les images NFT */
+        .nft-card {
+            transition: transform 0.3s ease;
+            border-radius: 15px;
+            display: inline-block;
+        }
+        
+        .nft-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .nft-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 15px;
+            object-fit: cover;
+            border: 4px solid white;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
         }
         
         @media (max-width: 992px) {
@@ -358,7 +376,7 @@
                 position: relative;
                 bottom: 0;
                 right: 0;
-                margin: -80px auto 30px; /* Négatif pour remonter l'image */
+                margin: -80px auto 30px;
                 display: block;
                 max-width: 85%;
                 width: 85%;
@@ -369,8 +387,8 @@
             .hero-section {
                 height: auto;
                 min-height: 100vh;
-                padding: 100px 0 20px; /* Moins de padding en bas */
-                overflow: hidden; /* Remettre hidden sur mobile */
+                padding: 100px 0 20px;
+                overflow: hidden;
             }
             
             .hero-main-title {
@@ -384,6 +402,11 @@
             .what-section {
                 padding-top: 100px;
                 margin-top: 0;
+            }
+            
+            .nft-image {
+                width: 120px;
+                height: 120px;
             }
         }
         
@@ -419,12 +442,10 @@
             width: auto;
         }
         
-        /* Correction pour le défilement fluide */
         html {
             scroll-behavior: smooth;
         }
         
-        /* Correction pour la navbar sur mobile */
         @media (max-width: 991px) {
             .navbar-collapse {
                 background: rgba(90, 58, 49, 0.9);
@@ -470,7 +491,6 @@
                 <div class="row align-items-center">
                     <div class="col-lg-6">
                         <div class="hero-content">
-                            <!-- Logo au-dessus du texte -->
                             <img src="CartoonPachyTitre.png" alt="CartoonPachy" class="hero-logo">
                             
                             <h1 class="hero-main-title">
@@ -484,7 +504,6 @@
                     </div>
                 </div>
             </div>
-            <!-- Image en superposition - CORRIGÉE -->
             <img src="20en1.png" alt="20 Personnages CartoonPachy" class="hero-overlay-image">
         </section>
 
@@ -495,7 +514,7 @@
                     <div class="col-lg-7">
                         <h2>QU'EST-CE QUE LES CARTOON PACHYS</h2>
                         <p>
-                            Les Cartoon Pachys sont 5 555 NFTs de photo de profil uniques<br>
+                            Les Cartoon Pachys sont 7,777 NFTs de photo de profil uniques<br>
                             mettant en vedette Pachy, la mascotte joyeuse de <strong>CartoonPachy</strong>,<br>
                             un écosystème créatif NFT avec plus de 500 000 utilisateurs.
                         </p>
@@ -528,27 +547,72 @@
             </div>
         </section>
 
-        <!-- Collection Section -->
+        <!-- Collection Section MODIFIÉE -->
         <section class="collection-section-old" id="stats">
             <div class="container">
                 <h2 class="section-title">LA COLLECTION</h2>
                 <div class="row">
                     <div class="col-md-4">
                         <div class="stats-box">
-                            <div class="stats-number" id="collection-size">5,555</div>
-                            <div class="stats-label">NFTs Uniques</div>
+                            <div class="stats-number">7,777</div>
+                            <div class="stats-label">PFP NFTs Uniques</div>
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="stats-box">
-                            <div class="stats-number">🎨</div>
-                            <div class="stats-label">Traits et raretés reflétant la personnalité unique de Pachy</div>
+                            <div class="stats-number">🎭</div>
+                            <div class="stats-label">Traits célébrant les personnalités de Dino</div>
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="stats-box">
                             <div class="stats-number">✨</div>
-                            <div class="stats-label">Chaque Pachy est unique et spécial</div>
+                            <div class="stats-label">Chaque NFT est unique</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Section avec texte et 4 images comme sur la photo -->
+                <div class="row mt-5 align-items-center">
+                    <!-- Texte à gauche -->
+                    <div class="col-lg-6">
+                        <div class="feature-box" style="background: rgba(255,255,255,0.9);">
+                            <h4 style="color: var(--sunset-deep); margin-bottom: 15px; font-size: 2rem;">7,777 PFP NFTs</h4>
+                            <p style="color: var(--bg-dark); font-size: 1.5rem; margin-bottom: 15px; font-weight: bold;">
+                                Chacun est unique
+                            </p>
+                            <p style="color: var(--bg-dark); font-size: 1.3rem; line-height: 1.6;">
+                                Traits et raretés célébrant<br>
+                                les multiples personnalités de Dino
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- 4 images à droite -->
+                    <div class="col-lg-6">
+                        <div class="row g-3">
+                            <!-- Ligne du haut -->
+                            <div class="col-6 text-center">
+                                <div class="nft-card">
+                                    <img src="5.png" alt="NFT 5" class="nft-image">
+                                </div>
+                            </div>
+                            <div class="col-6 text-center">
+                                <div class="nft-card">
+                                    <img src="6.png" alt="NFT 6" class="nft-image">
+                                </div>
+                            </div>
+                            <!-- Ligne du bas -->
+                            <div class="col-6 text-center">
+                                <div class="nft-card">
+                                    <img src="7.png" alt="NFT 7" class="nft-image">
+                                </div>
+                            </div>
+                            <div class="col-6 text-center">
+                                <div class="nft-card">
+                                    <img src="10.png" alt="NFT 10" class="nft-image">
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
