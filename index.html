@@ -351,7 +351,7 @@
             padding-top: 150px;
         }
         
-        /* Styles pour l'image de collection - CORRIGÉ POUR TRANSPARENCE */
+        /* Styles pour l'image de collection - AVEC BORDURE MINIME */
         .collection-image-container {
             text-align: center;
             margin-top: 40px;
@@ -363,6 +363,10 @@
             height: auto;
             object-fit: cover;
             background: transparent !important;
+            /* BORDURE MINIME AJOUTÉE */
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
         }
         
         @media (max-width: 992px) {
@@ -396,6 +400,11 @@
             .what-section {
                 padding-top: 100px;
                 margin-top: 0;
+            }
+            
+            .collection-image {
+                border: 1.5px solid rgba(255, 255, 255, 0.3);
+                border-radius: 6px;
             }
         }
         
@@ -561,7 +570,7 @@
                     </div>
                 </div>
 
-                <!-- Image de collection avec fond transparent -->
+                <!-- Image de collection avec fond transparent et bordure minime -->
                 <div class="collection-image-container">
                     <img 
                         loading="lazy" 
