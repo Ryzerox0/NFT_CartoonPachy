@@ -352,23 +352,57 @@
             padding-top: 150px;
         }
         
-        /* Styles pour l'image de collection - SANS FOND ET SANS BORDURE */
+        /* Styles pour l'image de collection avec texte intégré */
         .collection-image-container {
+            position: relative;
             text-align: center;
             margin-top: 20px;
             margin-bottom: 40px;
             background: transparent;
             padding: 0;
+            max-width: 921px;
+            margin-left: auto;
+            margin-right: auto;
         }
         
         .collection-image {
             max-width: 100%;
             height: auto;
             object-fit: cover;
-            /* SANS BORDURE */
             border: none;
             border-radius: 0;
             box-shadow: none;
+        }
+        
+        .image-text-overlay {
+            position: absolute;
+            color: white;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+            z-index: 10;
+        }
+        
+        .text-top-left {
+            top: 20%;
+            left: 10%;
+            font-size: 2.5rem;
+            text-align: left;
+        }
+        
+        .text-top-right {
+            top: 20%;
+            right: 10%;
+            font-size: 2.5rem;
+            text-align: right;
+        }
+        
+        .text-center-bottom {
+            bottom: 25%;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 2.2rem;
+            text-align: center;
+            width: 80%;
         }
         
         /* Nouveaux éléments de style savane */
@@ -435,6 +469,24 @@
             .what-section {
                 padding-top: 100px;
                 margin-top: 0;
+            }
+            
+            .text-top-left, .text-top-right {
+                font-size: 1.8rem;
+            }
+            
+            .text-center-bottom {
+                font-size: 1.6rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .text-top-left, .text-top-right {
+                font-size: 1.4rem;
+            }
+            
+            .text-center-bottom {
+                font-size: 1.2rem;
             }
         }
         
@@ -583,7 +635,7 @@
             <div class="container">
                 <h2 class="section-title">LA COLLECTION</h2>
                 
-                <!-- Image de collection juste en dessous du titre -->
+                <!-- Image de collection avec texte intégré -->
                 <div class="collection-image-container">
                     <img 
                         loading="lazy" 
@@ -592,6 +644,21 @@
                         class="collection-image" 
                         width="921" 
                         height="381">
+                    
+                    <!-- Texte en haut à gauche -->
+                    <div class="image-text-overlay text-top-left">
+                        7,777<br>PFP NFTs Uniques
+                    </div>
+                    
+                    <!-- Texte en haut à droite -->
+                    <div class="image-text-overlay text-top-right">
+                        Chaque NFT<br>est unique
+                    </div>
+                    
+                    <!-- Texte au centre en bas -->
+                    <div class="image-text-overlay text-center-bottom">
+                        Traits célébrant les personnalités de Dino
+                    </div>
                 </div>
 
                 <div class="row">
@@ -611,21 +678,6 @@
                         <div class="stats-box">
                             <div class="stats-number">✨</div>
                             <div class="stats-label">Chaque NFT est unique</div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Texte descriptif sous les stats -->
-                <div class="row mt-4">
-                    <div class="col-12 text-center">
-                        <div class="feature-box" style="background: rgba(255,255,255,0.9); max-width: 800px; margin: 0 auto;">
-                            <h4 style="color: var(--savannah-earth); margin-bottom: 15px; font-size: 2rem;">7,777 PFP NFTs</h4>
-                            <p style="color: var(--savannah-brown); font-size: 1.5rem; margin-bottom: 15px; font-weight: bold;">
-                                Chacun est unique
-                            </p>
-                            <p style="color: var(--savannah-brown); font-size: 1.3rem; line-height: 1.6;">
-                                Traits et raretés célébrant les multiples personnalités de Dino
-                            </p>
                         </div>
                     </div>
                 </div>
