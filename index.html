@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Accueil | CartoonPachy</title>
-    <link rel="icon" type="image/png" href="1.png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -37,15 +36,6 @@
             background: var(--savannah-sun);
         }
         
-        .background-image {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            position: absolute;
-            top: 0;
-            left: 0;
-        }
-        
         .content-overlay {
             position: relative;
             z-index: 1;
@@ -74,13 +64,6 @@
             pointer-events: none;
         }
         
-        .logo {
-            font-size: 2rem;
-            font-weight: 800;
-            color: white;
-            text-shadow: 2px 2px 4px rgba(139, 69, 19, 0.4);
-        }
-        
         .hero-title {
             font-size: 4rem;
             font-weight: 900;
@@ -95,20 +78,6 @@
             margin-bottom: 40px;
         }
         
-        .pachy-card {
-            background: var(--savannah-sand);
-            border-radius: 20px;
-            padding: 30px;
-            box-shadow: 0 10px 30px rgba(139, 69, 19, 0.3);
-            transition: transform 0.3s ease;
-            margin-bottom: 30px;
-            border: 2px solid var(--savannah-yellow);
-        }
-        
-        .pachy-card:hover {
-            transform: translateY(-10px);
-        }
-        
         .section-title {
             font-size: 3rem;
             font-weight: 800;
@@ -118,21 +87,10 @@
             text-shadow: 3px 3px 6px rgba(139, 69, 19, 0.4);
         }
         
-        .vision-section {
-            background: var(--savannah-orange);
-            padding: 100px 0;
-            position: relative;
-        }
-        
-        .collection-section {
-            background: var(--savannah-sand);
-            padding: 100px 0;
-            position: relative;
-        }
-        
         .what-section {
             background: var(--savannah-sand);
             padding: 100px 0;
+            padding-top: 150px;
             position: relative;
             z-index: 50;
         }
@@ -150,12 +108,6 @@
             color: var(--savannah-brown);
             line-height: 1.8;
             text-align: center;
-        }
-        
-        .what-image {
-            max-width: 100%;
-            height: auto;
-            border-radius: 20px;
         }
         
         .vision-section-new {
@@ -180,11 +132,82 @@
             text-align: center;
         }
         
+        /* NOUVELLE SECTION COLLECTION */
         .collection-section-old {
             background: var(--savannah-yellow);
             padding: 100px 0;
             position: relative;
             z-index: 50;
+        }
+        
+        .collection-layout {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 50px;
+            max-width: 1400px;
+            margin: 0 auto 60px;
+        }
+        
+        .collection-image-container {
+            flex: 1;
+            max-width: 500px;
+        }
+        
+        .collection-image {
+            width: 100%;
+            height: auto;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(139, 69, 19, 0.3);
+        }
+        
+        .text-blocks-container {
+            flex: 1;
+            max-width: 600px;
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+        
+        .text-block-row {
+            display: flex;
+            gap: 25px;
+        }
+        
+        .text-block {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 8px 25px rgba(139, 69, 19, 0.25);
+            border: 3px solid var(--savannah-orange);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            flex: 1;
+        }
+        
+        .text-block:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 35px rgba(139, 69, 19, 0.35);
+        }
+        
+        .text-block h3 {
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: var(--savannah-earth);
+            margin-bottom: 12px;
+            text-align: center;
+        }
+        
+        .text-block p {
+            font-size: 1.2rem;
+            color: var(--savannah-brown);
+            text-align: center;
+            margin: 0;
+            line-height: 1.5;
+            font-weight: 600;
+        }
+        
+        .text-block-full {
+            width: 100%;
         }
         
         .why-section {
@@ -241,10 +264,6 @@
             border: 2px solid rgba(253, 235, 208, 0.4);
         }
         
-        .pachy-emoji {
-            font-size: 4rem;
-        }
-        
         .bullet-point {
             display: flex;
             align-items: center;
@@ -289,11 +308,6 @@
             z-index: 2000;
             width: 100%;
             top: 0;
-        }
-        
-        .navbar-custom.scrolled {
-            background: transparent !important;
-            backdrop-filter: none !important;
         }
         
         .navbar-custom a {
@@ -348,78 +362,6 @@
             pointer-events: none; 
         }
         
-        .what-section {
-            padding-top: 150px;
-        }
-        
-        /* Styles pour la section collection avec blocs de texte */
-        .collection-layout {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 40px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        
-        .collection-image-container {
-            flex: 1;
-            text-align: center;
-            background: transparent;
-            padding: 0;
-        }
-        
-        .collection-image {
-            max-width: 100%;
-            height: auto;
-            object-fit: cover;
-            border: none;
-            border-radius: 0;
-            box-shadow: none;
-        }
-        
-        .text-blocks-container {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            gap: 30px;
-        }
-        
-        .text-block {
-            background: rgba(255, 255, 255, 0.9);
-            border-radius: 15px;
-            padding: 25px;
-            box-shadow: 0 5px 15px rgba(139, 69, 19, 0.2);
-            border: 2px solid var(--savannah-yellow);
-        }
-        
-        .text-block-top {
-            display: flex;
-            gap: 20px;
-            margin-bottom: 30px;
-        }
-        
-        .text-block-top .text-block {
-            flex: 1;
-        }
-        
-        .text-block h3 {
-            font-size: 2.2rem;
-            font-weight: 900;
-            color: var(--savannah-earth);
-            margin-bottom: 10px;
-            text-align: center;
-        }
-        
-        .text-block p {
-            font-size: 1.3rem;
-            color: var(--savannah-brown);
-            text-align: center;
-            margin: 0;
-            line-height: 1.4;
-        }
-        
-        /* Nouveaux éléments de style savane */
         .savannah-pattern {
             position: absolute;
             width: 100%;
@@ -453,6 +395,24 @@
         }
         
         @media (max-width: 992px) {
+            .collection-layout {
+                flex-direction: column;
+                gap: 40px;
+            }
+            
+            .collection-image-container {
+                max-width: 100%;
+            }
+            
+            .text-blocks-container {
+                max-width: 100%;
+            }
+            
+            .text-block-row {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
             .hero-overlay-image {
                 position: relative;
                 bottom: 0;
@@ -461,15 +421,12 @@
                 display: block;
                 max-width: 85%;
                 width: 85%;
-                border-radius: 20px;
-                z-index: 1000;
             }
             
             .hero-section {
                 height: auto;
                 min-height: 100vh;
                 padding: 100px 0 20px;
-                overflow: hidden;
             }
             
             .hero-main-title {
@@ -480,23 +437,8 @@
                 max-width: 350px;
             }
             
-            .what-section {
-                padding-top: 100px;
-                margin-top: 0;
-            }
-            
-            .collection-layout {
-                flex-direction: column;
-                gap: 30px;
-            }
-            
-            .text-block-top {
-                flex-direction: column;
-                gap: 20px;
-            }
-            
             .text-block h3 {
-                font-size: 1.8rem;
+                font-size: 2rem;
             }
             
             .text-block p {
@@ -506,7 +448,7 @@
         
         @media (max-width: 768px) {
             .text-block h3 {
-                font-size: 1.6rem;
+                font-size: 1.8rem;
             }
             
             .text-block p {
@@ -536,16 +478,6 @@
             background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");        
         }
         
-        .alert {
-            margin-top: 15px;
-            border-radius: 10px;
-        }
-        
-        .logo-image {
-            height: 50px;
-            width: auto;
-        }
-        
         html {
             scroll-behavior: smooth;
         }
@@ -561,17 +493,13 @@
     </style>
 </head>
 <body>
-    <!-- Background Image -->
     <div class="background-container">
-        <img src="sunset.png" alt="Background" class="background-image">
         <div class="savannah-pattern"></div>
         <div class="accent-leaf accent-leaf-1"></div>
         <div class="accent-leaf accent-leaf-2"></div>
     </div>
 
-    <!-- Content Overlay -->
     <div class="content-overlay">
-        <!-- Navbar -->
         <nav class="navbar navbar-expand-lg navbar-custom">
             <div class="container">
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -592,14 +520,11 @@
             </div>
         </nav>
 
-        <!-- Hero Section -->
         <section class="hero-section" id="home">
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-lg-6">
                         <div class="hero-content">
-                            <img src="CartoonPachyTitre.png" alt="CartoonPachy" class="hero-logo">
-                            
                             <h1 class="hero-main-title">
                                 LE MINT ARRIVE<br>BIENTÔT. REJOIGNEZ LA<br>LISTE D'ATTENTE!
                             </h1>
@@ -611,10 +536,8 @@
                     </div>
                 </div>
             </div>
-            <img src="20en1.png" alt="20 Personnages CartoonPachy" class="hero-overlay-image">
         </section>
 
-        <!-- What Are Section -->
         <section class="what-section" id="collection">
             <div class="container">
                 <div class="row align-items-center">
@@ -630,14 +553,13 @@
             </div>
         </section>
 
-        <!-- Vision Section -->
         <section class="vision-section-new" id="vision">
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-lg-5">
-                        <video autoplay loop muted playsinline style="max-width: 100%; height: auto; border-radius: 20px; box-shadow: 0 10px 30px rgba(139, 69, 19, 0.3);">
-                            <source src="multicolor_smile.mp4" type="video/mp4">
-                        </video>
+                        <div style="max-width: 100%; height: auto; border-radius: 20px; box-shadow: 0 10px 30px rgba(139, 69, 19, 0.3); background: var(--savannah-orange); aspect-ratio: 16/9; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5rem; text-align: center;">
+                            Vidéo Multicolor Smile
+                        </div>
                     </div>
                     <div class="col-lg-7">
                         <h2>NOTRE VISION</h2>
@@ -654,74 +576,44 @@
             </div>
         </section>
 
-        <!-- Collection Section MODIFIÉE -->
+        <!-- NOUVELLE SECTION COLLECTION AMÉLIORÉE -->
         <section class="collection-section-old" id="stats">
             <div class="container">
                 <h2 class="section-title">LA COLLECTION</h2>
                 
-                <!-- Nouvelle disposition avec image et blocs de texte -->
                 <div class="collection-layout">
-                    <!-- Image de collection -->
+                    <!-- Image de gauche -->
                     <div class="collection-image-container">
-                        <img 
-                            loading="lazy" 
-                            src="collection_4_NFT.png" 
-                            alt="Collection CartoonPachy NFTs" 
-                            class="collection-image" 
-                            width="921" 
-                            height="381">
+                        <div style="width: 100%; aspect-ratio: 921/381; background: linear-gradient(135deg, var(--savannah-orange), var(--savannah-sun)); border-radius: 20px; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5rem; text-align: center; box-shadow: 0 10px 30px rgba(139, 69, 19, 0.3);">
+                            Collection 4 NFTs
+                        </div>
                     </div>
                     
-                    <!-- Blocs de texte à côté de l'image -->
+                    <!-- Blocs de texte à droite -->
                     <div class="text-blocks-container">
-                        <!-- Deux blocs en haut -->
-                        <div class="text-block-top">
-                            <!-- Bloc en haut à gauche -->
+                        <!-- Ligne du haut : deux blocs côte à côte -->
+                        <div class="text-block-row">
                             <div class="text-block">
                                 <h3>7,777</h3>
                                 <p>PFP NFTs Uniques</p>
                             </div>
                             
-                            <!-- Bloc en haut à droite -->
                             <div class="text-block">
                                 <h3>✨</h3>
                                 <p>Chaque NFT est unique</p>
                             </div>
                         </div>
                         
-                        <!-- Bloc en bas au milieu -->
-                        <div class="text-block">
+                        <!-- Ligne du bas : un seul bloc centré -->
+                        <div class="text-block text-block-full">
                             <h3>🎭</h3>
                             <p>Traits célébrant les personnalités de Dino</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Stats boxes en dessous -->
-                <div class="row mt-5">
-                    <div class="col-md-4">
-                        <div class="stats-box">
-                            <div class="stats-number">7,777</div>
-                            <div class="stats-label">PFP NFTs Uniques</div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="stats-box">
-                            <div class="stats-number">🎭</div>
-                            <div class="stats-label">Traits célébrant les personnalités de Dino</div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="stats-box">
-                            <div class="stats-number">✨</div>
-                            <div class="stats-label">Chaque NFT est unique</div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Why Own Section -->
         <section class="why-section" id="why">
             <div class="container">
                 <h2 class="section-title">POURQUOI POSSÉDER UN CARTOON PACHY?</h2>
@@ -739,27 +631,26 @@
                     <div class="col-lg-6">
                         <h3 style="color: white; margin-bottom: 30px;">POSSÉDER UN CARTOON PACHY SIGNIFIE REJOINDRE:</h3>
                         <div class="feature-box">
-                            <p style="color: white;">🌟 Une communauté qui valorise la créativité, l'art et l'innovation</p>
+                            <p style="color: var(--savannah-brown);">🌟 Une communauté qui valorise la créativité, l'art et l'innovation</p>
                         </div>
                         <div class="feature-box">
-                            <p style="color: white;">📱 Un écosystème où Pachy devient un personnage emblématique</p>
+                            <p style="color: var(--savannah-brown);">📱 Un écosystème où Pachy devient un personnage emblématique</p>
                         </div>
                         <div class="feature-box">
-                            <p style="color: white;">🎭 Un univers en expansion d'histoires, de collaborations et d'aventures que vous aidez à créer</p>
+                            <p style="color: var(--savannah-brown);">🎭 Un univers en expansion d'histoires, de collaborations et d'aventures que vous aidez à créer</p>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Products Section -->
         <section class="products-section" id="products">
             <div class="container">
                 <h2 class="section-title">NOS PRODUITS</h2>
                 <div class="row justify-content-center">
                     <div class="col-lg-8">
                         <div class="feature-box text-center">
-                            <p style="font-size: 1.3rem; color: white;">
+                            <p style="font-size: 1.3rem; color: var(--savannah-brown);">
                                 Pachy devient rapidement un personnage reconnu dans l'univers NFT et au-delà, avec des apparitions dans diverses applications créatives et plateformes.
                             </p>
                         </div>
@@ -768,7 +659,6 @@
             </div>
         </section>
 
-        <!-- Collaboration Section -->
         <section class="collaboration-section" id="collaboration">
             <div class="container">
                 <h2 class="section-title">COLLABORATION & PORTÉE</h2>
@@ -797,8 +687,8 @@
                     </div>
                     <div class="col-lg-6">
                         <div class="feature-box">
-                            <h4 style="color: white; margin-bottom: 20px;">Ce n'est que le début</h4>
-                            <p style="color: white; font-size: 1.1rem;">
+                            <h4 style="color: var(--savannah-brown); margin-bottom: 20px;">Ce n'est que le début</h4>
+                            <p style="color: var(--savannah-brown); font-size: 1.1rem;">
                                 De nouvelles collaborations avec des artistes, des créateurs de contenu et des communautés Web3 sont déjà en cours de développement.
                             </p>
                         </div>
@@ -807,7 +697,6 @@
             </div>
         </section>
 
-        <!-- CTA Section -->
         <section class="cta-section" id="join">
             <div class="container text-center">
                 <h2 class="section-title" style="color: var(--savannah-earth);">Pachy est prêt à rencontrer ses détenteurs.</h2>
@@ -826,7 +715,6 @@
             </div>
         </section>
 
-        <!-- Footer -->
         <footer>
             <div class="container">
                 <p>&copy; <span id="current-year">2024</span> CartoonPachy. Tous droits réservés.</p>
@@ -841,7 +729,6 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        // Smooth scroll
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -852,16 +739,13 @@
             });
         });
 
-        // Navbar scroll effect
         window.addEventListener('scroll', function() {
             const navbar = document.querySelector('.navbar-custom');
             navbar.classList.remove('scrolled');
         });
 
-        // Current year for footer
         document.getElementById('current-year').textContent = new Date().getFullYear();
 
-        // Form submission
         document.getElementById('waitlist-form').addEventListener('submit', function(e) {
             e.preventDefault();
             const email = document.getElementById('email').value;
