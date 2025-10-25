@@ -342,23 +342,27 @@
         }
         
         .collection-image-container {
-            flex: 1;
+            flex: 1.2; /* Plus d'espace pour l'image */
             text-align: center;
             background: transparent;
-            padding: 0;
+            padding: 20px;
         }
         
         .collection-image {
             max-width: 100%;
             height: auto;
             object-fit: cover;
-            border: none;
-            border-radius: 0;
-            box-shadow: none;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(139, 69, 19, 0.4);
+            transition: transform 0.3s ease;
+        }
+        
+        .collection-image:hover {
+            transform: scale(1.02);
         }
         
         .text-blocks-container {
-            flex: 1;
+            flex: 0.8; /* Moins d'espace pour les blocs de texte */
             display: flex;
             flex-direction: column;
             gap: 30px;
@@ -466,6 +470,15 @@
             .collection-layout {
                 flex-direction: column;
                 gap: 30px;
+            }
+            
+            .collection-image-container {
+                flex: 1;
+                padding: 10px;
+            }
+            
+            .text-blocks-container {
+                flex: 1;
             }
             
             .text-block-top {
@@ -632,22 +645,22 @@
             </div>
         </section>
 
-        <!-- Collection Section MODIFIÉE - SUPPRESSION DE LA DUPLICATION -->
+        <!-- Collection Section MODIFIÉE - IMAGE AGRANDIE -->
         <section class="collection-section-old" id="stats">
             <div class="container">
                 <h2 class="section-title">LA COLLECTION</h2>
                 
                 <!-- Nouvelle disposition avec image et blocs de texte -->
                 <div class="collection-layout">
-                    <!-- Image de collection -->
+                    <!-- Image de collection - AGRANDIE -->
                     <div class="collection-image-container">
                         <img 
                             loading="lazy" 
                             src="collection_4_NFT.png" 
                             alt="Collection CartoonPachy NFTs" 
                             class="collection-image" 
-                            width="921" 
-                            height="381">
+                            width="1100" 
+                            height="auto">
                     </div>
                     
                     <!-- Blocs de texte à côté de l'image -->
