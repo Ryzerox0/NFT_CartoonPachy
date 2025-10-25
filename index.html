@@ -345,15 +345,16 @@
             flex: 1.2; /* Plus d'espace pour l'image */
             text-align: center;
             background: transparent;
-            padding: 20px;
+            padding: 0;
         }
         
         .collection-image {
             max-width: 100%;
             height: auto;
             object-fit: cover;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(139, 69, 19, 0.4);
+            border: none;
+            border-radius: 0;
+            box-shadow: none;
             transition: transform 0.3s ease;
         }
         
@@ -474,7 +475,7 @@
             
             .collection-image-container {
                 flex: 1;
-                padding: 10px;
+                padding: 0;
             }
             
             .text-blocks-container {
@@ -645,14 +646,14 @@
             </div>
         </section>
 
-        <!-- Collection Section MODIFIÉE - IMAGE AGRANDIE -->
+        <!-- Collection Section MODIFIÉE - IMAGE AGRANDIE SANS BORDURE -->
         <section class="collection-section-old" id="stats">
             <div class="container">
                 <h2 class="section-title">LA COLLECTION</h2>
                 
                 <!-- Nouvelle disposition avec image et blocs de texte -->
                 <div class="collection-layout">
-                    <!-- Image de collection - AGRANDIE -->
+                    <!-- Image de collection - AGRANDIE SANS BORDURE -->
                     <div class="collection-image-container">
                         <img 
                             loading="lazy" 
