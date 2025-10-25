@@ -331,47 +331,21 @@
             padding-top: 150px;
         }
         
-        /* NOUVEAU STYLE POUR LA SECTION COLLECTION AVEC TEXTE AU-DESSUS ET EN-DESSOUS */
-        .collection-vertical-layout {
+        /* Styles pour la section collection avec blocs de texte */
+        .collection-layout {
             display: flex;
-            flex-direction: column;
             align-items: center;
             justify-content: center;
+            gap: 40px;
             max-width: 1200px;
             margin: 0 auto;
-            gap: 40px;
-        }
-        
-        .collection-text-block {
-            background: rgba(255, 255, 255, 0.9);
-            border-radius: 15px;
-            padding: 25px;
-            box-shadow: 0 5px 15px rgba(139, 69, 19, 0.2);
-            border: 2px solid var(--savannah-yellow);
-            text-align: center;
-            width: 100%;
-            max-width: 800px;
-        }
-        
-        .collection-text-block h3 {
-            font-size: 2.5rem;
-            font-weight: 900;
-            color: var(--savannah-earth);
-            margin-bottom: 10px;
-        }
-        
-        .collection-text-block p {
-            font-size: 1.4rem;
-            color: var(--savannah-brown);
-            margin: 0;
-            line-height: 1.4;
         }
         
         .collection-image-container {
+            flex: 1.2; /* Plus d'espace pour l'image */
             text-align: center;
             background: transparent;
             padding: 0;
-            width: 100%;
         }
         
         .collection-image {
@@ -389,7 +363,43 @@
         }
         
         .text-blocks-container {
-            display: none; /* Caché car nous utilisons maintenant la disposition verticale */
+            flex: 0.8; /* Moins d'espace pour les blocs de texte */
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+        
+        .text-block {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 5px 15px rgba(139, 69, 19, 0.2);
+            border: 2px solid var(--savannah-yellow);
+        }
+        
+        .text-block-top {
+            display: flex;
+            gap: 20px;
+        }
+        
+        .text-block-top .text-block {
+            flex: 1;
+        }
+        
+        .text-block h3 {
+            font-size: 2.2rem;
+            font-weight: 900;
+            color: var(--savannah-earth);
+            margin-bottom: 10px;
+            text-align: center;
+        }
+        
+        .text-block p {
+            font-size: 1.3rem;
+            color: var(--savannah-brown);
+            text-align: center;
+            margin: 0;
+            line-height: 1.4;
         }
         
         /* Nouveaux éléments de style savane */
@@ -458,26 +468,41 @@
                 margin-top: 0;
             }
             
-            .collection-vertical-layout {
+            .collection-layout {
+                flex-direction: column;
                 gap: 30px;
             }
             
-            .collection-text-block h3 {
-                font-size: 2rem;
+            .collection-image-container {
+                flex: 1;
+                padding: 0;
             }
             
-            .collection-text-block p {
-                font-size: 1.2rem;
+            .text-blocks-container {
+                flex: 1;
+            }
+            
+            .text-block-top {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            .text-block h3 {
+                font-size: 1.8rem;
+            }
+            
+            .text-block p {
+                font-size: 1.1rem;
             }
         }
         
         @media (max-width: 768px) {
-            .collection-text-block h3 {
-                font-size: 1.8rem;
+            .text-block h3 {
+                font-size: 1.6rem;
             }
             
-            .collection-text-block p {
-                font-size: 1.1rem;
+            .text-block p {
+                font-size: 1rem;
             }
         }
         
@@ -621,25 +646,14 @@
             </div>
         </section>
 
-        <!-- Collection Section MODIFIÉE - TEXTE AU-DESSUS ET EN-DESSOUS DE L'IMAGE -->
+        <!-- Collection Section MODIFIÉE - IMAGE AGRANDIE SANS BORDURE -->
         <section class="collection-section-old" id="stats">
             <div class="container">
                 <h2 class="section-title">LA COLLECTION</h2>
                 
-                <!-- Nouvelle disposition verticale avec texte au-dessus et en-dessous -->
-                <div class="collection-vertical-layout">
-                    <!-- Bloc de texte au-dessus de l'image -->
-                    <div class="collection-text-block">
-                        <h3>7,777</h3>
-                        <p>PFP NFTs Uniques</p>
-                    </div>
-                    
-                    <div class="collection-text-block">
-                        <h3>✨</h3>
-                        <p>Chaque NFT est unique</p>
-                    </div>
-                    
-                    <!-- Image de collection -->
+                <!-- Nouvelle disposition avec image et blocs de texte -->
+                <div class="collection-layout">
+                    <!-- Image de collection - AGRANDIE SANS BORDURE -->
                     <div class="collection-image-container">
                         <img 
                             loading="lazy" 
@@ -650,10 +664,28 @@
                             height="auto">
                     </div>
                     
-                    <!-- Bloc de texte en-dessous de l'image -->
-                    <div class="collection-text-block">
-                        <h3>🎭</h3>
-                        <p>Traits célébrant les personnalités de Dino</p>
+                    <!-- Blocs de texte à côté de l'image -->
+                    <div class="text-blocks-container">
+                        <!-- Deux blocs en haut -->
+                        <div class="text-block-top">
+                            <!-- Bloc en haut à gauche -->
+                            <div class="text-block">
+                                <h3>7,777</h3>
+                                <p>PFP NFTs Uniques</p>
+                            </div>
+                            
+                            <!-- Bloc en haut à droite -->
+                            <div class="text-block">
+                                <h3>✨</h3>
+                                <p>Chaque NFT est unique</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Bloc en bas au milieu -->
+                        <div class="text-block">
+                            <h3>🎭</h3>
+                            <p>Traits célébrant les personnalités de Dino</p>
+                        </div>
                     </div>
                 </div>
             </div>
