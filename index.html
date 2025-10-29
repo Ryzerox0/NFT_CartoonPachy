@@ -430,77 +430,6 @@
             right: 8%;
         }
         
-        @media (max-width: 992px) {
-            .hero-overlay-image {
-                position: relative;
-                bottom: 0;
-                right: 0;
-                margin: -80px auto 30px;
-                display: block;
-                max-width: 85%;
-                width: 85%;
-                border-radius: 20px;
-                z-index: 1000;
-            }
-            
-            .hero-section {
-                height: auto;
-                min-height: 100vh;
-                padding: 100px 0 20px;
-                overflow: hidden;
-            }
-            
-            .hero-main-title {
-                font-size: 3rem;
-            }
-            
-            .hero-logo {
-                max-width: 350px;
-            }
-            
-            .what-section {
-                padding-top: 100px;
-                margin-top: 0;
-            }
-            
-            .collection-layout {
-                flex-direction: column;
-                gap: 30px;
-            }
-            
-            .collection-image-container {
-                flex: 1;
-                padding: 0;
-            }
-            
-            .text-blocks-container {
-                flex: 1;
-            }
-            
-            .text-block-top {
-                flex-direction: column;
-                gap: 20px;
-            }
-            
-            .text-block h3 {
-                font-size: 1.8rem;
-            }
-            
-            .text-block p {
-                font-size: 1.1rem;
-            }
-        }
-        
-        @media (max-width: 768px) {
-            .text-block h3 {
-                font-size: 1.6rem;
-            }
-            
-            .text-block p {
-                font-size: 1rem;
-            }
-        }
-        
         footer {
             background: var(--savannah-earth);
             color: white;
@@ -537,12 +466,330 @@
             scroll-behavior: smooth;
         }
         
+        /* ============ RESPONSIVE STYLES ============ */
+        
+        /* Tablets and large phones */
+        @media (max-width: 1199px) {
+            .hero-main-title {
+                font-size: 3.5rem;
+            }
+            
+            .section-title {
+                font-size: 2.5rem;
+            }
+            
+            .what-section h2, .vision-section-new h2 {
+                font-size: 3rem;
+            }
+        }
+        
+        @media (max-width: 992px) {
+            .hero-overlay-image {
+                position: relative;
+                bottom: 0;
+                right: 0;
+                margin: -80px auto 30px;
+                display: block;
+                max-width: 85%;
+                width: 85%;
+                border-radius: 20px;
+                z-index: 1000;
+            }
+            
+            .hero-section {
+                height: auto;
+                min-height: 100vh;
+                padding: 100px 0 20px;
+                overflow: hidden;
+            }
+            
+            .hero-main-title {
+                font-size: 3rem;
+                text-align: center;
+            }
+            
+            .hero-main-subtitle {
+                text-align: center;
+            }
+            
+            .hero-content {
+                text-align: center;
+                margin: 0 auto;
+            }
+            
+            .hero-logo {
+                max-width: 350px;
+                margin: 0 auto 40px;
+                display: block;
+            }
+            
+            .what-section {
+                padding-top: 100px;
+                margin-top: 0;
+            }
+            
+            .collection-layout {
+                flex-direction: column;
+                gap: 30px;
+            }
+            
+            .collection-image-container {
+                flex: 1;
+                padding: 0;
+            }
+            
+            .text-blocks-container {
+                flex: 1;
+            }
+            
+            .text-block-top {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            .text-block h3 {
+                font-size: 1.8rem;
+            }
+            
+            .text-block p {
+                font-size: 1.1rem;
+            }
+            
+            .what-section h2, .vision-section-new h2 {
+                font-size: 2.5rem;
+            }
+            
+            .what-section p, .vision-section-new p {
+                font-size: 1.1rem;
+            }
+            
+            .bullet-point {
+                font-size: 1rem;
+            }
+            
+            .feature-box p {
+                font-size: 1rem;
+            }
+            
+            .btn-custom {
+                padding: 12px 30px;
+                font-size: 1.1rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hero-main-title {
+                font-size: 2.5rem;
+            }
+            
+            .hero-main-subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .what-section h2, .vision-section-new h2 {
+                font-size: 2rem;
+            }
+            
+            .what-section p, .vision-section-new p {
+                font-size: 1rem;
+            }
+            
+            .text-block h3 {
+                font-size: 1.6rem;
+            }
+            
+            .text-block p {
+                font-size: 1rem;
+            }
+            
+            .pachy-card {
+                padding: 20px;
+            }
+            
+            .feature-box {
+                padding: 20px;
+            }
+            
+            .bullet-point {
+                align-items: flex-start;
+            }
+            
+            .bullet-point i {
+                margin-top: 3px;
+            }
+            
+            .hero-logo {
+                max-width: 280px;
+            }
+            
+            .what-section, .vision-section-new, .collection-section-old, 
+            .why-section, .products-section, .cta-section {
+                padding: 70px 0;
+            }
+            
+            .navbar-custom a {
+                margin: 0 10px;
+                font-size: 0.9rem;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .hero-main-title {
+                font-size: 2rem;
+            }
+            
+            .hero-main-subtitle {
+                font-size: 1rem;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .what-section h2, .vision-section-new h2 {
+                font-size: 1.8rem;
+            }
+            
+            .hero-logo {
+                max-width: 220px;
+            }
+            
+            .btn-custom {
+                padding: 10px 25px;
+                font-size: 1rem;
+            }
+            
+            .text-block {
+                padding: 20px 15px;
+            }
+            
+            .collection-layout {
+                gap: 20px;
+            }
+            
+            .text-blocks-container {
+                gap: 20px;
+            }
+            
+            .accent-leaf {
+                width: 100px;
+                height: 100px;
+            }
+            
+            .hero-overlay-image {
+                max-width: 90%;
+                width: 90%;
+            }
+            
+            .navbar-custom {
+                padding: 10px 0;
+            }
+            
+            .navbar-custom a {
+                margin: 0 8px;
+                font-size: 0.85rem;
+            }
+            
+            footer {
+                padding: 30px 0;
+            }
+            
+            footer .fa-2x {
+                font-size: 1.5rem;
+            }
+        }
+        
+        @media (max-width: 400px) {
+            .hero-main-title {
+                font-size: 1.7rem;
+            }
+            
+            .hero-main-subtitle {
+                font-size: 0.9rem;
+            }
+            
+            .section-title {
+                font-size: 1.6rem;
+            }
+            
+            .what-section h2, .vision-section-new h2 {
+                font-size: 1.6rem;
+            }
+            
+            .hero-logo {
+                max-width: 180px;
+            }
+            
+            .text-block h3 {
+                font-size: 1.4rem;
+            }
+            
+            .text-block p {
+                font-size: 0.9rem;
+            }
+            
+            .pachy-card, .feature-box {
+                padding: 15px;
+            }
+            
+            .bullet-point {
+                font-size: 0.9rem;
+            }
+            
+            .bullet-point i {
+                font-size: 1.2rem;
+            }
+        }
+        
         @media (max-width: 991px) {
             .navbar-collapse {
                 background: rgba(139, 69, 19, 0.9);
                 border-radius: 10px;
                 padding: 15px;
                 margin-top: 10px;
+            }
+            
+            .navbar-nav {
+                text-align: center;
+            }
+            
+            .navbar-nav .nav-item {
+                margin: 5px 0;
+            }
+        }
+        
+        /* Orientation-specific adjustments */
+        @media (max-height: 600px) and (orientation: landscape) {
+            .hero-section {
+                height: auto;
+                min-height: 100vh;
+                padding: 100px 0 50px;
+            }
+            
+            .hero-logo {
+                max-width: 250px;
+                margin-bottom: 20px;
+            }
+            
+            .hero-main-title {
+                font-size: 2.2rem;
+                margin-bottom: 15px;
+            }
+            
+            .hero-main-subtitle {
+                font-size: 1rem;
+                margin-bottom: 20px;
+            }
+        }
+        
+        /* High-resolution displays */
+        @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+            .hero-logo, .hero-overlay-image, .collection-image {
+                image-rendering: -webkit-optimize-contrast;
             }
         }
     </style>
