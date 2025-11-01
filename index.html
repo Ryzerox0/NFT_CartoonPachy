@@ -309,35 +309,18 @@
             filter: drop-shadow(2px 2px 4px rgba(139, 69, 19, 0.3));
         }
         
-        /* NOUVELLE STRUCTURE POUR HERO SECTION */
-        .hero-container {
-            display: flex;
-            flex-direction: column;
-            width: 100%;
-            height: 100%;
-        }
-        
-        .hero-text-content {
-            flex: 1;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
-        }
-        
-        .hero-image-content {
-            flex: 1;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
-        }
-        
+        /* IMAGE QUI CHEVAUCHE SUR DESKTOP */
         .hero-overlay-image {
-            max-width: 100%;
+            position: absolute;
+            bottom: -400px;
+            right: 5%;
+            max-width: 650px;
+            width: 40%;
             height: auto;
+            z-index: 1000; 
             border-radius: 20px;
             filter: drop-shadow(0 15px 30px rgba(0,0,0,0.4));
+            pointer-events: none; 
         }
         
         .what-section {
@@ -484,32 +467,7 @@
             scroll-behavior: smooth;
         }
         
-        /* ============ CORRECTIONS RESPONSIVE POUR LA HERO SECTION ============ */
-        
-        /* Desktop - Disposition côte à côte */
-        @media (min-width: 992px) {
-            .hero-container {
-                flex-direction: row;
-            }
-            
-            .hero-text-content {
-                flex: 1;
-                padding: 0 40px;
-            }
-            
-            .hero-image-content {
-                flex: 1;
-                padding: 0 40px;
-            }
-            
-            .hero-content {
-                text-align: left;
-            }
-            
-            .hero-overlay-image {
-                max-width: 90%;
-            }
-        }
+        /* ============ RESPONSIVE STYLES ============ */
         
         /* Tablets and large phones */
         @media (max-width: 1199px) {
@@ -524,29 +482,41 @@
             .what-section h2, .vision-section-new h2 {
                 font-size: 3rem;
             }
+            
+            .hero-overlay-image {
+                max-width: 550px;
+                bottom: -350px;
+            }
         }
         
-        /* Mobile - Disposition verticale */
-        @media (max-width: 991px) {
+        /* MOBILE - L'image devient normale sous le texte */
+        @media (max-width: 992px) {
+            .hero-overlay-image {
+                position: relative;
+                bottom: 0;
+                right: 0;
+                margin: 40px auto 30px;
+                display: block;
+                max-width: 85%;
+                width: 85%;
+                border-radius: 20px;
+                z-index: 1000;
+            }
+            
             .hero-section {
                 height: auto;
                 min-height: 100vh;
                 padding: 100px 0 50px;
+                overflow: hidden;
             }
             
-            .hero-container {
-                flex-direction: column;
-            }
-            
-            .hero-text-content {
-                order: 1;
-                padding: 20px 15px;
+            .hero-main-title {
+                font-size: 3rem;
                 text-align: center;
             }
             
-            .hero-image-content {
-                order: 2;
-                padding: 0 15px 20px;
+            .hero-main-subtitle {
+                text-align: center;
             }
             
             .hero-content {
@@ -554,44 +524,73 @@
                 margin: 0 auto;
             }
             
-            .hero-main-title {
-                font-size: 2.8rem;
-                text-align: center;
-            }
-            
-            .hero-main-subtitle {
-                font-size: 1.2rem;
-                text-align: center;
-            }
-            
             .hero-logo {
-                max-width: 300px;
-                margin: 0 auto 30px;
+                max-width: 350px;
+                margin: 0 auto 40px;
                 display: block;
             }
             
-            .hero-overlay-image {
-                max-width: 90%;
-                margin: 0 auto;
+            .what-section {
+                padding-top: 100px;
+                margin-top: 0;
             }
             
-            .what-section {
-                padding-top: 80px;
-                margin-top: 0;
+            .collection-layout {
+                flex-direction: column;
+                gap: 30px;
+            }
+            
+            .collection-image-container {
+                flex: 1;
+                padding: 0;
+            }
+            
+            .text-blocks-container {
+                flex: 1;
+            }
+            
+            .text-block-top {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            .text-block h3 {
+                font-size: 1.8rem;
+            }
+            
+            .text-block p {
+                font-size: 1.1rem;
+            }
+            
+            .what-section h2, .vision-section-new h2 {
+                font-size: 2.5rem;
+            }
+            
+            .what-section p, .vision-section-new p {
+                font-size: 1.1rem;
+            }
+            
+            .bullet-point {
+                font-size: 1rem;
+            }
+            
+            .feature-box p {
+                font-size: 1rem;
+            }
+            
+            .btn-custom {
+                padding: 12px 30px;
+                font-size: 1.1rem;
             }
         }
         
         @media (max-width: 768px) {
             .hero-main-title {
-                font-size: 2.3rem;
+                font-size: 2.5rem;
             }
             
             .hero-main-subtitle {
-                font-size: 1.1rem;
-            }
-            
-            .hero-logo {
-                max-width: 250px;
+                font-size: 1.2rem;
             }
             
             .section-title {
@@ -630,6 +629,10 @@
                 margin-top: 3px;
             }
             
+            .hero-logo {
+                max-width: 280px;
+            }
+            
             .what-section, .vision-section-new, .collection-section-old, 
             .why-section, .products-section, .cta-section {
                 padding: 70px 0;
@@ -640,9 +643,14 @@
                 font-size: 0.9rem;
             }
             
-            .btn-custom {
-                padding: 12px 30px;
-                font-size: 1.1rem;
+            /* Correction pour la section hero sur mobile */
+            .hero-section {
+                padding: 120px 0 50px;
+            }
+            
+            .hero-overlay-image {
+                margin: 30px auto;
+                max-width: 90%;
             }
         }
         
@@ -665,8 +673,8 @@
             }
             
             .hero-logo {
-                max-width: 200px;
-                margin-bottom: 25px;
+                max-width: 220px;
+                margin-bottom: 30px;
             }
             
             .btn-custom {
@@ -693,6 +701,8 @@
             
             .hero-overlay-image {
                 max-width: 95%;
+                width: 95%;
+                margin: 20px auto;
             }
             
             .navbar-custom {
@@ -712,8 +722,13 @@
                 font-size: 1.5rem;
             }
             
+            /* Correction supplémentaire pour petits écrans */
             .hero-section {
-                padding: 90px 0 30px;
+                padding: 100px 0 30px;
+            }
+            
+            .hero-content {
+                padding: 0 15px;
             }
         }
         
@@ -758,8 +773,13 @@
                 font-size: 1.2rem;
             }
             
+            /* Correction pour très petits écrans */
             .hero-section {
-                padding: 80px 0 20px;
+                padding: 90px 0 20px;
+            }
+            
+            .hero-overlay-image {
+                margin: 15px auto;
             }
         }
         
@@ -794,7 +814,7 @@
             }
             
             .hero-main-title {
-                font-size: 1.8rem;
+                font-size: 2rem;
                 margin-bottom: 10px;
             }
             
@@ -805,6 +825,7 @@
             
             .hero-overlay-image {
                 max-width: 40%;
+                margin: 20px auto;
             }
         }
         
@@ -813,6 +834,49 @@
             .hero-logo, .hero-overlay-image, .collection-image {
                 image-rendering: -webkit-optimize-contrast;
             }
+        }
+        
+        /* Améliorations pour les très petits écrans */
+        @media (max-width: 350px) {
+            .hero-main-title {
+                font-size: 1.5rem;
+            }
+            
+            .hero-main-subtitle {
+                font-size: 0.85rem;
+            }
+            
+            .hero-logo {
+                max-width: 150px;
+            }
+            
+            .section-title {
+                font-size: 1.4rem;
+            }
+            
+            .what-section h2, .vision-section-new h2 {
+                font-size: 1.4rem;
+            }
+            
+            .btn-custom {
+                padding: 8px 20px;
+                font-size: 0.9rem;
+            }
+            
+            .hero-section {
+                padding: 80px 0 15px;
+            }
+        }
+        
+        /* Correction pour s'assurer que le contenu est bien visible */
+        .hero-section .container {
+            position: relative;
+            z-index: 10;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 15;
         }
     </style>
 </head>
@@ -847,26 +911,27 @@
             </div>
         </nav>
 
-        <!-- Hero Section RESTRUCTURÉE -->
+        <!-- Hero Section - DESIGN ORIGINAL RESTAURÉ SUR DESKTOP -->
         <section class="hero-section" id="home">
-            <div class="hero-container">
-                <div class="hero-text-content">
-                    <div class="hero-content">
-                        <img src="CartoonPachyTitre.png" alt="CartoonPachy" class="hero-logo">
-                        
-                        <h1 class="hero-main-title">
-                            LE MINT ARRIVE<br>BIENTÔT. REJOIGNEZ LA<br>LISTE D'ATTENTE!
-                        </h1>
-                        <p class="hero-main-subtitle">
-                            Le mint arrive bientôt ! Rejoins la liste d'attente et fais partie des premiers à adopter ton CartoonPachy !
-                        </p>
-                        <button class="btn btn-custom">Rejoindre la liste d'attente</button>
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-6">
+                        <div class="hero-content">
+                            <img src="CartoonPachyTitre.png" alt="CartoonPachy" class="hero-logo">
+                            
+                            <h1 class="hero-main-title">
+                                LE MINT ARRIVE<br>BIENTÔT. REJOIGNEZ LA<br>LISTE D'ATTENTE!
+                            </h1>
+                            <p class="hero-main-subtitle">
+                                Le mint arrive bientôt ! Rejoins la liste d'attente et fais partie des premiers à adopter ton CartoonPachy !
+                            </p>
+                            <button class="btn btn-custom">Rejoindre la liste d'attente</button>
+                        </div>
                     </div>
                 </div>
-                <div class="hero-image-content">
-                    <img src="20en1.png" alt="20 Personnages CartoonPachy" class="hero-overlay-image">
-                </div>
             </div>
+            <!-- Image qui chevauche sur desktop -->
+            <img src="20en1.png" alt="20 Personnages CartoonPachy" class="hero-overlay-image">
         </section>
 
         <!-- What Are Section -->
