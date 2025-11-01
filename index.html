@@ -466,7 +466,7 @@
             scroll-behavior: smooth;
         }
         
-        /* ============ RESPONSIVE STYLES ============ */
+        /* ============ RESPONSIVE STYLES AMÉLIORÉS ============ */
         
         /* Tablets and large phones */
         @media (max-width: 1199px) {
@@ -480,6 +480,11 @@
             
             .what-section h2, .vision-section-new h2 {
                 font-size: 3rem;
+            }
+            
+            .hero-overlay-image {
+                max-width: 550px;
+                bottom: -300px;
             }
         }
         
@@ -575,6 +580,23 @@
                 padding: 12px 30px;
                 font-size: 1.1rem;
             }
+            
+            /* Amélioration responsive pour la section vision */
+            .vision-section-new .row {
+                flex-direction: column-reverse;
+            }
+            
+            .vision-section-new .col-lg-5,
+            .vision-section-new .col-lg-7 {
+                margin-bottom: 30px;
+            }
+            
+            .vision-section-new video {
+                width: 100%;
+                max-width: 500px;
+                margin: 0 auto;
+                display: block;
+            }
         }
         
         @media (max-width: 768px) {
@@ -634,6 +656,20 @@
             .navbar-custom a {
                 margin: 0 10px;
                 font-size: 0.9rem;
+            }
+            
+            /* Amélioration responsive pour la section why */
+            .why-section .row {
+                flex-direction: column;
+            }
+            
+            .why-section .col-lg-6 {
+                margin-bottom: 30px;
+            }
+            
+            /* Amélioration responsive pour la section products */
+            .products-section .col-lg-8 {
+                width: 100%;
             }
         }
         
@@ -700,6 +736,17 @@
             
             footer .fa-2x {
                 font-size: 1.5rem;
+            }
+            
+            /* Amélioration responsive pour les sections what et vision */
+            .what-section .row,
+            .vision-section-new .row {
+                text-align: center;
+            }
+            
+            .what-section p,
+            .vision-section-new p {
+                text-align: center;
             }
         }
         
@@ -784,6 +831,11 @@
                 font-size: 1rem;
                 margin-bottom: 20px;
             }
+            
+            .hero-overlay-image {
+                max-width: 40%;
+                bottom: -200px;
+            }
         }
         
         /* High-resolution displays */
@@ -791,6 +843,74 @@
             .hero-logo, .hero-overlay-image, .collection-image {
                 image-rendering: -webkit-optimize-contrast;
             }
+        }
+        
+        /* Améliorations pour les très petits écrans */
+        @media (max-width: 350px) {
+            .hero-main-title {
+                font-size: 1.5rem;
+            }
+            
+            .hero-main-subtitle {
+                font-size: 0.85rem;
+            }
+            
+            .hero-logo {
+                max-width: 150px;
+            }
+            
+            .section-title {
+                font-size: 1.4rem;
+            }
+            
+            .what-section h2, .vision-section-new h2 {
+                font-size: 1.4rem;
+            }
+            
+            .btn-custom {
+                padding: 8px 20px;
+                font-size: 0.9rem;
+            }
+        }
+        
+        /* Améliorations pour la section hero sur mobile */
+        .hero-section .container {
+            width: 100%;
+            max-width: 100%;
+        }
+        
+        .hero-section .row {
+            margin: 0;
+        }
+        
+        .hero-section .col-lg-6 {
+            padding: 0 15px;
+        }
+        
+        /* Améliorations pour la navigation mobile */
+        .navbar-toggler {
+            margin-right: 15px;
+        }
+        
+        .navbar-brand {
+            margin-left: 15px;
+        }
+        
+        /* Améliorations pour les images responsive */
+        img, video {
+            max-width: 100%;
+            height: auto;
+        }
+        
+        /* Améliorations pour le texte responsive */
+        .text-responsive {
+            font-size: calc(1rem + 0.5vw);
+        }
+        
+        /* Améliorations pour les boutons responsive */
+        .btn-responsive {
+            font-size: calc(0.8rem + 0.5vw);
+            padding: calc(0.5rem + 0.5vw) calc(1rem + 1vw);
         }
     </style>
 </head>
@@ -839,6 +959,7 @@
                             <p class="hero-main-subtitle">
                                 Le mint arrive bientôt ! Rejoins la liste d'attente et fais partie des premiers à adopter ton CartoonPachy !
                             </p>
+                            <button class="btn btn-custom btn-responsive">Rejoindre la liste d'attente</button>
                         </div>
                     </div>
                 </div>
@@ -852,7 +973,7 @@
                 <div class="row align-items-center">
                     <div class="col-lg-7">
                         <h2>QU'EST-CE QUE LES CARTOON PACHYS</h2>
-                        <p>
+                        <p class="text-responsive">
                             Les Cartoon Pachys sont 111 NFTs de photo de profil uniques<br>
                             mettant en vedette Pachy, la mascotte joyeuse de <strong>CartoonPachy</strong>,<br>
                             un écosystème créatif NFT.
@@ -873,7 +994,7 @@
                     </div>
                     <div class="col-lg-7">
                         <h2>NOTRE VISION</h2>
-                        <p>
+                        <p class="text-responsive">
                             Créatifs et pleins de caractère,<br>
                             les Cartoon Pachys répandent la joie et l'imagination<br>
                             partout où ils vont.<br>
@@ -1013,19 +1134,13 @@
         // Current year for footer
         document.getElementById('current-year').textContent = new Date().getFullYear();
 
-        // Form submission
-        document.getElementById('waitlist-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            const email = document.getElementById('email').value;
-            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            
-            if (emailRegex.test(email)) {
-                document.getElementById('form-message').innerHTML = '<div class="alert alert-success">✅ Merci ! Vous êtes maintenant sur la liste d\'attente !</div>';
-                document.getElementById('email').value = '';
-            } else {
-                document.getElementById('form-message').innerHTML = '<div class="alert alert-danger">❌ Email invalide</div>';
-            }
-        });
+        // Form submission (si vous ajoutez un formulaire plus tard)
+        const waitlistBtn = document.querySelector('.btn-custom');
+        if (waitlistBtn) {
+            waitlistBtn.addEventListener('click', function() {
+                alert('Fonctionnalité de liste d\'attente à implémenter!');
+            });
+        }
     </script>
 </body>
 </html>
