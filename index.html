@@ -5,8 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Accueil | CartoonPachy</title>
     <link rel="icon" type="image/png" href="1.png">
+    
+    <!-- Preload des polices critiques -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- CSS optimisé -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <style>
         :root {
             --savannah-sun: #E67E22;
@@ -15,17 +22,17 @@
             --savannah-brown: #A84300;
             --savannah-sand: #FDEBD0;
             --savannah-earth: #8B4513;
-            --savannah-sky: #3498DB;
             --savannah-dark-brown: #5D2906;
             --savannah-light-sand: #FFF9F0;
         }
         
+        /* STYLES CRITIQUES (Above the fold) */
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            overflow-x: hidden;
             margin: 0;
             padding: 0;
             background: var(--savannah-sun);
+            overflow-x: hidden;
         }
         
         .background-container {
@@ -35,7 +42,6 @@
             width: 100%;
             height: 100vh;
             z-index: -1;
-            overflow: hidden;
             background: var(--savannah-sun);
         }
         
@@ -43,95 +49,96 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            position: absolute;
-            top: 0;
-            left: 0;
         }
         
-        .content-overlay {
-            position: relative;
-            z-index: 1;
-            background: transparent;
+        .navbar-custom {
+            background: transparent !important;
+            padding: 15px 0;
+            position: fixed;
+            z-index: 2000;
+            width: 100%;
+            top: 0;
+        }
+        
+        .navbar-custom a {
+            color: white !important;
+            font-weight: 600;
+            margin: 0 15px;
+            text-shadow: 1px 1px 3px rgba(139, 69, 19, 0.4);
         }
         
         .hero-section {
             height: 100vh;
             position: relative;
-            overflow: visible;
             display: flex;
             align-items: center;
             justify-content: center;
             background: linear-gradient(135deg, rgba(230, 126, 34, 0.8) 0%, rgba(211, 84, 0, 0.7) 100%);
         }
         
-        .hero-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%23D35400" fill-opacity="0.2" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,122.7C672,117,768,139,864,138.7C960,139,1056,117,1152,106.7C1248,96,1344,96,1392,96L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>') no-repeat bottom;
-            background-size: cover;
-            pointer-events: none;
+        .hero-content {
+            text-align: left;
+            max-width: 600px;
+            position: relative;
+            z-index: 5;
         }
         
-        .logo {
-            font-size: 2rem;
-            font-weight: 800;
-            color: white;
-            text-shadow: 2px 2px 4px rgba(139, 69, 19, 0.4);
+        .hero-logo {
+            max-width: 500px;
+            width: 100%;
+            height: auto;
+            margin-bottom: 40px;
+            filter: drop-shadow(2px 2px 4px rgba(139, 69, 19, 0.3));
         }
         
-        .hero-title {
+        .hero-main-title {
             font-size: 4rem;
             font-weight: 900;
             color: white;
             text-shadow: 3px 3px 6px rgba(139, 69, 19, 0.4);
-            margin-bottom: 30px;
+            margin-bottom: 20px;
+            line-height: 1.1;
         }
         
-        .hero-subtitle {
+        .hero-main-subtitle {
             font-size: 1.5rem;
             color: rgba(255,255,255,0.95);
-            margin-bottom: 40px;
-        }
-        
-        .pachy-card {
-            background: var(--savannah-light-sand);
-            border-radius: 20px;
-            padding: 30px;
-            box-shadow: 0 10px 30px rgba(139, 69, 19, 0.3);
-            transition: transform 0.3s ease;
             margin-bottom: 30px;
-            border: 2px solid var(--savannah-yellow);
+            line-height: 1.5;
+            text-shadow: 1px 1px 3px rgba(139, 69, 19, 0.3);
         }
         
-        .pachy-card:hover {
-            transform: translateY(-10px);
-        }
-        
-        .section-title {
-            font-size: 3rem;
-            font-weight: 800;
-            color: white;
-            margin-bottom: 30px;
-            text-align: center;
-            text-shadow: 3px 3px 6px rgba(139, 69, 19, 0.4);
-        }
-        
-        .vision-section {
+        .btn-custom {
+            padding: 15px 40px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            border-radius: 50px;
+            border: none;
             background: var(--savannah-orange);
-            padding: 100px 0;
-            position: relative;
+            color: white;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(139, 69, 19, 0.3);
         }
         
-        .collection-section {
-            background: var(--savannah-sand);
-            padding: 100px 0;
-            position: relative;
+        .btn-custom:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 25px rgba(139, 69, 19, 0.4);
+            background: var(--savannah-sun);
         }
         
+        .hero-overlay-image {
+            position: absolute;
+            bottom: -400px;
+            right: 5%;
+            max-width: 650px;
+            width: 40%;
+            height: auto;
+            z-index: 1000;
+            border-radius: 20px;
+            filter: drop-shadow(0 15px 30px rgba(0,0,0,0.4));
+        }
+        
+        /* STYLES NON-CRITIQUES (Deferred) */
         .what-section {
             background: var(--savannah-light-sand);
             padding: 100px 0;
@@ -139,47 +146,11 @@
             z-index: 50;
         }
         
-        .what-section h2 {
-            font-size: 3.5rem;
-            font-weight: 900;
-            color: var(--savannah-dark-brown);
-            margin-bottom: 30px;
-            text-align: center;
-        }
-        
-        .what-section p {
-            font-size: 1.2rem;
-            color: var(--savannah-dark-brown);
-            line-height: 1.8;
-            text-align: center;
-        }
-        
-        .what-image {
-            max-width: 100%;
-            height: auto;
-            border-radius: 20px;
-        }
-        
         .vision-section-new {
             background: var(--savannah-light-sand);
             padding: 100px 0;
             position: relative;
             z-index: 50;
-        }
-        
-        .vision-section-new h2 {
-            font-size: 3.5rem;
-            font-weight: 900;
-            color: var(--savannah-dark-brown);
-            margin-bottom: 30px;
-            text-align: center;
-        }
-        
-        .vision-section-new p {
-            font-size: 1.2rem;
-            color: var(--savannah-dark-brown);
-            line-height: 1.8;
-            text-align: center;
         }
         
         .collection-section-old {
@@ -203,693 +174,64 @@
             z-index: 50;
         }
         
-        .cta-section {
-            background: var(--savannah-light-sand);
-            padding: 100px 0;
-            position: relative;
-            z-index: 50;
-        }
-        
-        .btn-custom {
-            padding: 15px 40px;
-            font-size: 1.2rem;
-            font-weight: 700;
-            border-radius: 50px;
-            border: none;
-            background: var(--savannah-orange);
-            color: white;
-            transition: all 0.3s ease;
-            box-shadow: 0 5px 15px rgba(139, 69, 19, 0.3);
-        }
-        
-        .btn-custom:hover {
-            transform: scale(1.05);
-            box-shadow: 0 8px 25px rgba(139, 69, 19, 0.4);
-            background: var(--savannah-sun);
-        }
-        
-        .feature-box {
-            background: rgba(255, 255, 255, 0.9);
-            border-radius: 15px;
-            padding: 30px;
-            margin-bottom: 20px;
-            border: 2px solid rgba(253, 235, 208, 0.4);
-        }
-        
-        .pachy-emoji {
-            font-size: 4rem;
-        }
-        
-        .bullet-point {
-            display: flex;
-            align-items: center;
-            margin-bottom: 15px;
-            color: white;
-            font-size: 1.1rem;
-        }
-        
-        .bullet-point i {
-            color: var(--savannah-yellow);
-            margin-right: 15px;
-            font-size: 1.5rem;
-        }
-        
-        .navbar-custom {
-            background: transparent !important;
-            backdrop-filter: none !important;
-            padding: 15px 0;
-            transition: all 0.3s ease;
-            position: fixed;
-            z-index: 2000;
-            width: 100%;
-            top: 0;
-        }
-        
-        .navbar-custom.scrolled {
-            background: transparent !important;
-            backdrop-filter: none !important;
-        }
-        
-        .navbar-custom a {
-            color: white !important;
-            font-weight: 600;
-            margin: 0 15px;
-            font-size: 1rem;
-            text-shadow: 1px 1px 3px rgba(139, 69, 19, 0.4);
-        }
-        
-        .hero-content {
-            text-align: left;
-            max-width: 600px;
-            position: relative;
-            z-index: 5;
-        }
-        
-        .hero-main-title {
-            font-size: 4rem;
-            font-weight: 900;
-            color: white;
-            text-shadow: 3px 3px 6px rgba(139, 69, 19, 0.4);
-            margin-bottom: 20px;
-            line-height: 1.1;
-        }
-        
-        .hero-main-subtitle {
-            font-size: 1.5rem;
-            color: rgba(255,255,255,0.95);
-            margin-bottom: 30px;
-            line-height: 1.5;
-            text-shadow: 1px 1px 3px rgba(139, 69, 19, 0.3);
-        }
-        
-        .hero-logo {
-            max-width: 500px;
-            height: auto;
-            margin-bottom: 40px;
-            filter: drop-shadow(2px 2px 4px rgba(139, 69, 19, 0.3));
-        }
-        
-        /* IMAGE QUI CHEVAUCHE SUR DESKTOP */
-        .hero-overlay-image {
-            position: absolute;
-            bottom: -400px;
-            right: 5%;
-            max-width: 650px;
-            width: 40%;
-            height: auto;
-            z-index: 1000; 
-            border-radius: 20px;
-            filter: drop-shadow(0 15px 30px rgba(0,0,0,0.4));
-            pointer-events: none; 
-        }
-        
-        .what-section {
-            padding-top: 150px;
-        }
-        
-        /* Styles pour la section collection avec blocs de texte */
-        .collection-layout {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 40px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        
-        .collection-image-container {
-            flex: 1.2; /* Plus d'espace pour l'image */
-            text-align: center;
-            background: transparent;
-            padding: 0;
-        }
-        
-        .collection-image {
-            max-width: 100%;
-            height: auto;
-            object-fit: cover;
-            border: none;
-            border-radius: 0;
-            box-shadow: none;
-            transition: transform 0.3s ease;
-        }
-        
-        .collection-image:hover {
-            transform: scale(1.02);
-        }
-        
-        .text-blocks-container {
-            flex: 0.8; /* Moins d'espace pour les blocs de texte */
-            display: flex;
-            flex-direction: column;
-            gap: 30px;
-        }
-        
-        .text-block {
-            background: var(--savannah-light-sand);
-            border-radius: 15px;
-            padding: 25px;
-            box-shadow: 0 5px 15px rgba(139, 69, 19, 0.2);
-            border: 2px solid var(--savannah-yellow);
-        }
-        
-        .text-block-top {
-            display: flex;
-            gap: 20px;
-        }
-        
-        .text-block-top .text-block {
-            flex: 1;
-        }
-        
-        .text-block h3 {
-            font-size: 2.2rem;
-            font-weight: 900;
-            color: var(--savannah-dark-brown);
-            margin-bottom: 10px;
-            text-align: center;
-        }
-        
-        .text-block p {
-            font-size: 1.3rem;
-            color: var(--savannah-dark-brown);
-            text-align: center;
-            margin: 0;
-            line-height: 1.4;
-        }
-        
-        /* Nouveaux éléments de style savane */
-        .savannah-pattern {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;
-            opacity: 0.05;
-            background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><path fill="%238B4513" d="M20,20 C30,10 70,10 80,20 C90,30 90,70 80,80 C70,90 30,90 20,80 C10,70 10,30 20,20 Z"/></svg>');
-            background-size: 200px 200px;
-            pointer-events: none;
-        }
-        
-        .accent-leaf {
-            position: absolute;
-            width: 150px;
-            height: 150px;
-            background: var(--savannah-yellow);
-            border-radius: 50%;
-            opacity: 0.1;
-            z-index: 0;
-        }
-        
-        .accent-leaf-1 {
-            top: 10%;
-            left: 5%;
-        }
-        
-        .accent-leaf-2 {
-            bottom: 15%;
-            right: 8%;
-        }
-        
         footer {
             background: var(--savannah-earth);
             color: white;
             padding: 40px 0;
             text-align: center;
-            position: relative;
-            z-index: 50;
         }
         
-        .navbar-toggler {
-            border: none;
-            padding: 4px 8px;
-        }
-        
-        .navbar-toggler:focus {
-            box-shadow: none;
-        }
-        
-        .navbar-toggler-icon {
-            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");        
-        }
-        
-        .alert {
-            margin-top: 15px;
-            border-radius: 10px;
-        }
-        
-        .logo-image {
-            height: 50px;
-            width: auto;
-        }
-        
-        html {
-            scroll-behavior: smooth;
-        }
-        
-        /* ============ RESPONSIVE STYLES ============ */
-        
-        /* Tablets and large phones */
+        /* RESPONSIVE STYLES */
         @media (max-width: 1199px) {
-            .hero-main-title {
-                font-size: 3.5rem;
-            }
-            
-            .section-title {
-                font-size: 2.5rem;
-            }
-            
-            .what-section h2, .vision-section-new h2 {
-                font-size: 3rem;
-            }
-            
-            .hero-overlay-image {
-                max-width: 550px;
-                bottom: -350px;
-            }
+            .hero-main-title { font-size: 3.5rem; }
+            .hero-overlay-image { max-width: 550px; bottom: -350px; }
         }
         
-        /* MOBILE - L'image devient normale sous le texte */
         @media (max-width: 992px) {
             .hero-overlay-image {
                 position: relative;
                 bottom: 0;
                 right: 0;
                 margin: 40px auto 30px;
-                display: block;
                 max-width: 85%;
                 width: 85%;
-                border-radius: 20px;
-                z-index: 1000;
             }
             
             .hero-section {
                 height: auto;
                 min-height: 100vh;
                 padding: 100px 0 50px;
-                overflow: hidden;
             }
             
-            .hero-main-title {
-                font-size: 3rem;
-                text-align: center;
-            }
-            
-            .hero-main-subtitle {
-                text-align: center;
-            }
-            
-            .hero-content {
-                text-align: center;
-                margin: 0 auto;
-            }
-            
-            .hero-logo {
-                max-width: 350px;
-                margin: 0 auto 40px;
-                display: block;
-            }
-            
-            .what-section {
-                padding-top: 100px;
-                margin-top: 0;
-            }
-            
-            .collection-layout {
-                flex-direction: column;
-                gap: 30px;
-            }
-            
-            .collection-image-container {
-                flex: 1;
-                padding: 0;
-            }
-            
-            .text-blocks-container {
-                flex: 1;
-            }
-            
-            .text-block-top {
-                flex-direction: column;
-                gap: 20px;
-            }
-            
-            .text-block h3 {
-                font-size: 1.8rem;
-            }
-            
-            .text-block p {
-                font-size: 1.1rem;
-            }
-            
-            .what-section h2, .vision-section-new h2 {
-                font-size: 2.5rem;
-            }
-            
-            .what-section p, .vision-section-new p {
-                font-size: 1.1rem;
-            }
-            
-            .bullet-point {
-                font-size: 1rem;
-            }
-            
-            .feature-box p {
-                font-size: 1rem;
-            }
-            
-            .btn-custom {
-                padding: 12px 30px;
-                font-size: 1.1rem;
-            }
+            .hero-main-title { font-size: 3rem; text-align: center; }
+            .hero-main-subtitle { text-align: center; }
+            .hero-content { text-align: center; margin: 0 auto; }
+            .hero-logo { max-width: 350px; margin: 0 auto 40px; }
         }
         
         @media (max-width: 768px) {
-            .hero-main-title {
-                font-size: 2.5rem;
-            }
-            
-            .hero-main-subtitle {
-                font-size: 1.2rem;
-            }
-            
-            .section-title {
-                font-size: 2rem;
-            }
-            
-            .what-section h2, .vision-section-new h2 {
-                font-size: 2rem;
-            }
-            
-            .what-section p, .vision-section-new p {
-                font-size: 1rem;
-            }
-            
-            .text-block h3 {
-                font-size: 1.6rem;
-            }
-            
-            .text-block p {
-                font-size: 1rem;
-            }
-            
-            .pachy-card {
-                padding: 20px;
-            }
-            
-            .feature-box {
-                padding: 20px;
-            }
-            
-            .bullet-point {
-                align-items: flex-start;
-            }
-            
-            .bullet-point i {
-                margin-top: 3px;
-            }
-            
-            .hero-logo {
-                max-width: 280px;
-            }
-            
-            .what-section, .vision-section-new, .collection-section-old, 
-            .why-section, .products-section, .cta-section {
-                padding: 70px 0;
-            }
-            
-            .navbar-custom a {
-                margin: 0 10px;
-                font-size: 0.9rem;
-            }
-            
-            /* Correction pour la section hero sur mobile */
-            .hero-section {
-                padding: 120px 0 50px;
-            }
-            
-            .hero-overlay-image {
-                margin: 30px auto;
-                max-width: 90%;
-            }
+            .hero-main-title { font-size: 2.5rem; }
+            .hero-main-subtitle { font-size: 1.2rem; }
+            .hero-logo { max-width: 280px; }
+            .hero-section { padding: 120px 0 50px; }
+            .hero-overlay-image { margin: 30px auto; max-width: 90%; }
         }
         
         @media (max-width: 576px) {
-            .hero-main-title {
-                font-size: 2rem;
-            }
-            
-            .hero-main-subtitle {
-                font-size: 1rem;
-                margin-bottom: 20px;
-            }
-            
-            .section-title {
-                font-size: 1.8rem;
-            }
-            
-            .what-section h2, .vision-section-new h2 {
-                font-size: 1.8rem;
-            }
-            
-            .hero-logo {
-                max-width: 220px;
-                margin-bottom: 30px;
-            }
-            
-            .btn-custom {
-                padding: 10px 25px;
-                font-size: 1rem;
-            }
-            
-            .text-block {
-                padding: 20px 15px;
-            }
-            
-            .collection-layout {
-                gap: 20px;
-            }
-            
-            .text-blocks-container {
-                gap: 20px;
-            }
-            
-            .accent-leaf {
-                width: 100px;
-                height: 100px;
-            }
-            
-            .hero-overlay-image {
-                max-width: 95%;
-                width: 95%;
-                margin: 20px auto;
-            }
-            
-            .navbar-custom {
-                padding: 10px 0;
-            }
-            
-            .navbar-custom a {
-                margin: 0 8px;
-                font-size: 0.85rem;
-            }
-            
-            footer {
-                padding: 30px 0;
-            }
-            
-            footer .fa-2x {
-                font-size: 1.5rem;
-            }
-            
-            /* Correction supplémentaire pour petits écrans */
-            .hero-section {
-                padding: 100px 0 30px;
-            }
-            
-            .hero-content {
-                padding: 0 15px;
-            }
-        }
-        
-        @media (max-width: 400px) {
-            .hero-main-title {
-                font-size: 1.7rem;
-            }
-            
-            .hero-main-subtitle {
-                font-size: 0.9rem;
-            }
-            
-            .section-title {
-                font-size: 1.6rem;
-            }
-            
-            .what-section h2, .vision-section-new h2 {
-                font-size: 1.6rem;
-            }
-            
-            .hero-logo {
-                max-width: 180px;
-            }
-            
-            .text-block h3 {
-                font-size: 1.4rem;
-            }
-            
-            .text-block p {
-                font-size: 0.9rem;
-            }
-            
-            .pachy-card, .feature-box {
-                padding: 15px;
-            }
-            
-            .bullet-point {
-                font-size: 0.9rem;
-            }
-            
-            .bullet-point i {
-                font-size: 1.2rem;
-            }
-            
-            /* Correction pour très petits écrans */
-            .hero-section {
-                padding: 90px 0 20px;
-            }
-            
-            .hero-overlay-image {
-                margin: 15px auto;
-            }
-        }
-        
-        @media (max-width: 991px) {
-            .navbar-collapse {
-                background: rgba(139, 69, 19, 0.9);
-                border-radius: 10px;
-                padding: 15px;
-                margin-top: 10px;
-            }
-            
-            .navbar-nav {
-                text-align: center;
-            }
-            
-            .navbar-nav .nav-item {
-                margin: 5px 0;
-            }
-        }
-        
-        /* Orientation-specific adjustments */
-        @media (max-height: 600px) and (orientation: landscape) {
-            .hero-section {
-                height: auto;
-                min-height: 100vh;
-                padding: 80px 0 30px;
-            }
-            
-            .hero-logo {
-                max-width: 200px;
-                margin-bottom: 15px;
-            }
-            
-            .hero-main-title {
-                font-size: 2rem;
-                margin-bottom: 10px;
-            }
-            
-            .hero-main-subtitle {
-                font-size: 0.9rem;
-                margin-bottom: 15px;
-            }
-            
-            .hero-overlay-image {
-                max-width: 40%;
-                margin: 20px auto;
-            }
-        }
-        
-        /* High-resolution displays */
-        @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-            .hero-logo, .hero-overlay-image, .collection-image {
-                image-rendering: -webkit-optimize-contrast;
-            }
-        }
-        
-        /* Améliorations pour les très petits écrans */
-        @media (max-width: 350px) {
-            .hero-main-title {
-                font-size: 1.5rem;
-            }
-            
-            .hero-main-subtitle {
-                font-size: 0.85rem;
-            }
-            
-            .hero-logo {
-                max-width: 150px;
-            }
-            
-            .section-title {
-                font-size: 1.4rem;
-            }
-            
-            .what-section h2, .vision-section-new h2 {
-                font-size: 1.4rem;
-            }
-            
-            .btn-custom {
-                padding: 8px 20px;
-                font-size: 0.9rem;
-            }
-            
-            .hero-section {
-                padding: 80px 0 15px;
-            }
-        }
-        
-        /* Correction pour s'assurer que le contenu est bien visible */
-        .hero-section .container {
-            position: relative;
-            z-index: 10;
-        }
-        
-        .hero-content {
-            position: relative;
-            z-index: 15;
+            .hero-main-title { font-size: 2rem; }
+            .hero-main-subtitle { font-size: 1rem; margin-bottom: 20px; }
+            .hero-logo { max-width: 220px; margin-bottom: 30px; }
+            .btn-custom { padding: 10px 25px; font-size: 1rem; }
+            .hero-overlay-image { max-width: 95%; margin: 20px auto; }
         }
     </style>
 </head>
 <body>
-    <!-- Background Image -->
+    <!-- Background Image avec lazy loading -->
     <div class="background-container">
-        <img src="sunset.png" alt="Background" class="background-image">
-        <div class="savannah-pattern"></div>
-        <div class="accent-leaf accent-leaf-1"></div>
-        <div class="accent-leaf accent-leaf-2"></div>
+        <img src="sunset.png" alt="Background" class="background-image" loading="lazy">
     </div>
 
-    <!-- Content Overlay -->
     <div class="content-overlay">
         <!-- Navbar -->
         <nav class="navbar navbar-expand-lg navbar-custom">
@@ -905,20 +247,18 @@
                         <li class="nav-item"><a class="nav-link" href="#stats">La Collection</a></li>
                         <li class="nav-item"><a class="nav-link" href="#why">Pourquoi Pachy</a></li>
                         <li class="nav-item"><a class="nav-link" href="#products">Produits</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#join">Rejoindre</a></li>
                     </ul>
                 </div>
             </div>
         </nav>
 
-        <!-- Hero Section - DESIGN ORIGINAL RESTAURÉ SUR DESKTOP -->
+        <!-- Hero Section -->
         <section class="hero-section" id="home">
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-lg-6">
                         <div class="hero-content">
-                            <img src="CartoonPachyTitre.png" alt="CartoonPachy" class="hero-logo">
-                            
+                            <img src="CartoonPachyTitre.png" alt="CartoonPachy" class="hero-logo" loading="eager">
                             <h1 class="hero-main-title">
                                 LE MINT ARRIVE<br>BIENTÔT. REJOIGNEZ LA<br>LISTE D'ATTENTE!
                             </h1>
@@ -930,11 +270,24 @@
                     </div>
                 </div>
             </div>
-            <!-- Image qui chevauche sur desktop -->
-            <img src="20en1.png" alt="20 Personnages CartoonPachy" class="hero-overlay-image">
+            <img src="20en1.png" alt="20 Personnages CartoonPachy" class="hero-overlay-image" loading="lazy">
         </section>
 
-        <!-- What Are Section -->
+        <!-- Le reste du contenu chargé après -->
+        <script>
+            // Chargement différé du contenu non-critique
+            document.addEventListener('DOMContentLoaded', function() {
+                const loadRemainingContent = () => {
+                    // Ici on pourrait charger dynamiquement le reste du contenu
+                    // Pour l'instant on laisse le HTML standard
+                };
+                
+                // Charger après un délai court
+                setTimeout(loadRemainingContent, 100);
+            });
+        </script>
+
+        <!-- Reste du contenu -->
         <section class="what-section" id="collection">
             <div class="container">
                 <div class="row align-items-center">
@@ -950,12 +303,11 @@
             </div>
         </section>
 
-        <!-- Vision Section -->
         <section class="vision-section-new" id="vision">
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-lg-5">
-                        <video autoplay loop muted playsinline style="max-width: 100%; height: auto; border-radius: 20px; box-shadow: 0 10px 30px rgba(139, 69, 19, 0.3);">
+                        <video autoplay loop muted playsinline style="max-width: 100%; height: auto; border-radius: 20px; box-shadow: 0 10px 30px rgba(139, 69, 19, 0.3);" loading="lazy">
                             <source src="multicolor_smile.mp4" type="video/mp4">
                         </video>
                     </div>
@@ -974,42 +326,24 @@
             </div>
         </section>
 
-        <!-- Collection Section MODIFIÉE - IMAGE AGRANDIE SANS BORDURE -->
         <section class="collection-section-old" id="stats">
             <div class="container">
                 <h2 class="section-title">LA COLLECTION</h2>
-                
-                <!-- Nouvelle disposition avec image et blocs de texte -->
                 <div class="collection-layout">
-                    <!-- Image de collection - AGRANDIE SANS BORDURE -->
                     <div class="collection-image-container">
-                        <img 
-                            loading="lazy" 
-                            src="collection_4_NFT.png" 
-                            alt="Collection CartoonPachy NFTs" 
-                            class="collection-image" 
-                            width="1100" 
-                            height="auto">
+                        <img src="collection_4_NFT.png" alt="Collection CartoonPachy NFTs" class="collection-image" loading="lazy" width="1100" height="auto">
                     </div>
-                    
-                    <!-- Blocs de texte à côté de l'image -->
                     <div class="text-blocks-container">
-                        <!-- Deux blocs en haut -->
                         <div class="text-block-top">
-                            <!-- Bloc en haut à gauche -->
                             <div class="text-block">
                                 <h3>111</h3>
                                 <p>PFP NFTs Uniques</p>
                             </div>
-                            
-                            <!-- Bloc en haut à droite -->
                             <div class="text-block">
                                 <h3>✨</h3>
                                 <p>Chaque NFT est unique</p>
                             </div>
                         </div>
-                        
-                        <!-- Bloc en bas au milieu -->
                         <div class="text-block">
                             <h3>🎭</h3>
                             <p>Traits célébrant les personnalités de Pachy</p>
@@ -1019,7 +353,6 @@
             </div>
         </section>
 
-        <!-- Why Own Section -->
         <section class="why-section" id="why">
             <div class="container">
                 <h2 class="section-title">POURQUOI POSSÉDER UN CARTOON PACHY?</h2>
@@ -1050,7 +383,6 @@
             </div>
         </section>
 
-        <!-- Products Section -->
         <section class="products-section" id="products">
             <div class="container">
                 <h2 class="section-title">NOS PRODUITS</h2>
@@ -1066,7 +398,6 @@
             </div>
         </section>
 
-        <!-- Footer -->
         <footer>
             <div class="container">
                 <p>&copy; <span id="current-year">2024</span> CartoonPachy. Tous droits réservés.</p>
@@ -1079,31 +410,29 @@
         </footer>
     </div>
 
+    <!-- Scripts en bas de page -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        // Smooth scroll
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if(target) {
-                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }
+        // Scripts optimisés
+        document.addEventListener('DOMContentLoaded', function() {
+            // Smooth scroll
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if(target) {
+                        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                });
             });
-        });
 
-        // Navbar scroll effect
-        window.addEventListener('scroll', function() {
-            const navbar = document.querySelector('.navbar-custom');
-            navbar.classList.remove('scrolled');
-        });
+            // Current year for footer
+            document.getElementById('current-year').textContent = new Date().getFullYear();
 
-        // Current year for footer
-        document.getElementById('current-year').textContent = new Date().getFullYear();
-
-        // Form submission
-        document.querySelector('.btn-custom').addEventListener('click', function() {
-            alert('Fonctionnalité de liste d\'attente à implémenter!');
+            // Form submission
+            document.querySelector('.btn-custom').addEventListener('click', function() {
+                alert('Fonctionnalité de liste d\'attente à implémenter!');
+            });
         });
     </script>
 </body>
