@@ -466,7 +466,7 @@
             scroll-behavior: smooth;
         }
         
-        /* ============ RESPONSIVE STYLES AMÉLIORÉS ============ */
+        /* ============ CORRECTIONS RESPONSIVE POUR LA HERO SECTION ============ */
         
         /* Tablets and large phones */
         @media (max-width: 1199px) {
@@ -484,7 +484,7 @@
             
             .hero-overlay-image {
                 max-width: 550px;
-                bottom: -300px;
+                bottom: -350px;
             }
         }
         
@@ -493,7 +493,7 @@
                 position: relative;
                 bottom: 0;
                 right: 0;
-                margin: -80px auto 30px;
+                margin: 40px auto 30px;
                 display: block;
                 max-width: 85%;
                 width: 85%;
@@ -504,7 +504,7 @@
             .hero-section {
                 height: auto;
                 min-height: 100vh;
-                padding: 100px 0 20px;
+                padding: 100px 0 50px;
                 overflow: hidden;
             }
             
@@ -580,23 +580,6 @@
                 padding: 12px 30px;
                 font-size: 1.1rem;
             }
-            
-            /* Amélioration responsive pour la section vision */
-            .vision-section-new .row {
-                flex-direction: column-reverse;
-            }
-            
-            .vision-section-new .col-lg-5,
-            .vision-section-new .col-lg-7 {
-                margin-bottom: 30px;
-            }
-            
-            .vision-section-new video {
-                width: 100%;
-                max-width: 500px;
-                margin: 0 auto;
-                display: block;
-            }
         }
         
         @media (max-width: 768px) {
@@ -658,18 +641,14 @@
                 font-size: 0.9rem;
             }
             
-            /* Amélioration responsive pour la section why */
-            .why-section .row {
-                flex-direction: column;
+            /* Correction pour la section hero sur mobile */
+            .hero-section {
+                padding: 120px 0 50px;
             }
             
-            .why-section .col-lg-6 {
-                margin-bottom: 30px;
-            }
-            
-            /* Amélioration responsive pour la section products */
-            .products-section .col-lg-8 {
-                width: 100%;
+            .hero-overlay-image {
+                margin: 30px auto;
+                max-width: 90%;
             }
         }
         
@@ -680,6 +659,7 @@
             
             .hero-main-subtitle {
                 font-size: 1rem;
+                margin-bottom: 20px;
             }
             
             .section-title {
@@ -692,6 +672,7 @@
             
             .hero-logo {
                 max-width: 220px;
+                margin-bottom: 30px;
             }
             
             .btn-custom {
@@ -717,8 +698,9 @@
             }
             
             .hero-overlay-image {
-                max-width: 90%;
-                width: 90%;
+                max-width: 95%;
+                width: 95%;
+                margin: 20px auto;
             }
             
             .navbar-custom {
@@ -738,15 +720,13 @@
                 font-size: 1.5rem;
             }
             
-            /* Amélioration responsive pour les sections what et vision */
-            .what-section .row,
-            .vision-section-new .row {
-                text-align: center;
+            /* Correction supplémentaire pour petits écrans */
+            .hero-section {
+                padding: 100px 0 30px;
             }
             
-            .what-section p,
-            .vision-section-new p {
-                text-align: center;
+            .hero-content {
+                padding: 0 15px;
             }
         }
         
@@ -790,6 +770,15 @@
             .bullet-point i {
                 font-size: 1.2rem;
             }
+            
+            /* Correction pour très petits écrans */
+            .hero-section {
+                padding: 90px 0 20px;
+            }
+            
+            .hero-overlay-image {
+                margin: 15px auto;
+            }
         }
         
         @media (max-width: 991px) {
@@ -814,27 +803,27 @@
             .hero-section {
                 height: auto;
                 min-height: 100vh;
-                padding: 100px 0 50px;
+                padding: 80px 0 30px;
             }
             
             .hero-logo {
-                max-width: 250px;
-                margin-bottom: 20px;
-            }
-            
-            .hero-main-title {
-                font-size: 2.2rem;
+                max-width: 200px;
                 margin-bottom: 15px;
             }
             
+            .hero-main-title {
+                font-size: 2rem;
+                margin-bottom: 10px;
+            }
+            
             .hero-main-subtitle {
-                font-size: 1rem;
-                margin-bottom: 20px;
+                font-size: 0.9rem;
+                margin-bottom: 15px;
             }
             
             .hero-overlay-image {
                 max-width: 40%;
-                bottom: -200px;
+                margin: 20px auto;
             }
         }
         
@@ -871,46 +860,21 @@
                 padding: 8px 20px;
                 font-size: 0.9rem;
             }
+            
+            .hero-section {
+                padding: 80px 0 15px;
+            }
         }
         
-        /* Améliorations pour la section hero sur mobile */
+        /* Correction pour s'assurer que le contenu est bien visible */
         .hero-section .container {
-            width: 100%;
-            max-width: 100%;
+            position: relative;
+            z-index: 10;
         }
         
-        .hero-section .row {
-            margin: 0;
-        }
-        
-        .hero-section .col-lg-6 {
-            padding: 0 15px;
-        }
-        
-        /* Améliorations pour la navigation mobile */
-        .navbar-toggler {
-            margin-right: 15px;
-        }
-        
-        .navbar-brand {
-            margin-left: 15px;
-        }
-        
-        /* Améliorations pour les images responsive */
-        img, video {
-            max-width: 100%;
-            height: auto;
-        }
-        
-        /* Améliorations pour le texte responsive */
-        .text-responsive {
-            font-size: calc(1rem + 0.5vw);
-        }
-        
-        /* Améliorations pour les boutons responsive */
-        .btn-responsive {
-            font-size: calc(0.8rem + 0.5vw);
-            padding: calc(0.5rem + 0.5vw) calc(1rem + 1vw);
+        .hero-content {
+            position: relative;
+            z-index: 15;
         }
     </style>
 </head>
@@ -959,7 +923,7 @@
                             <p class="hero-main-subtitle">
                                 Le mint arrive bientôt ! Rejoins la liste d'attente et fais partie des premiers à adopter ton CartoonPachy !
                             </p>
-                            <button class="btn btn-custom btn-responsive">Rejoindre la liste d'attente</button>
+                            <button class="btn btn-custom">Rejoindre la liste d'attente</button>
                         </div>
                     </div>
                 </div>
@@ -973,7 +937,7 @@
                 <div class="row align-items-center">
                     <div class="col-lg-7">
                         <h2>QU'EST-CE QUE LES CARTOON PACHYS</h2>
-                        <p class="text-responsive">
+                        <p>
                             Les Cartoon Pachys sont 111 NFTs de photo de profil uniques<br>
                             mettant en vedette Pachy, la mascotte joyeuse de <strong>CartoonPachy</strong>,<br>
                             un écosystème créatif NFT.
@@ -994,7 +958,7 @@
                     </div>
                     <div class="col-lg-7">
                         <h2>NOTRE VISION</h2>
-                        <p class="text-responsive">
+                        <p>
                             Créatifs et pleins de caractère,<br>
                             les Cartoon Pachys répandent la joie et l'imagination<br>
                             partout où ils vont.<br>
@@ -1134,13 +1098,10 @@
         // Current year for footer
         document.getElementById('current-year').textContent = new Date().getFullYear();
 
-        // Form submission (si vous ajoutez un formulaire plus tard)
-        const waitlistBtn = document.querySelector('.btn-custom');
-        if (waitlistBtn) {
-            waitlistBtn.addEventListener('click', function() {
-                alert('Fonctionnalité de liste d\'attente à implémenter!');
-            });
-        }
+        // Form submission
+        document.querySelector('.btn-custom').addEventListener('click', function() {
+            alert('Fonctionnalité de liste d\'attente à implémenter!');
+        });
     </script>
 </body>
 </html>
