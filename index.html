@@ -131,7 +131,7 @@
             filter: drop-shadow(2px 2px 4px rgba(139, 69, 19, 0.3));
         }
         
-        /* IMAGE QUI CHEVAUCHE SUR DESKTOP */
+        /* CORRECTION DE L'IMAGE 20EN1 */
         .hero-overlay-image {
             position: absolute;
             bottom: -400px;
@@ -139,10 +139,13 @@
             max-width: 650px;
             width: 40%;
             height: auto;
-            z-index: 1000; 
+            z-index: 1000;
             border-radius: 20px;
             filter: drop-shadow(0 15px 30px rgba(0,0,0,0.4));
-            pointer-events: none; 
+            pointer-events: none;
+            opacity: 1 !important;
+            visibility: visible !important;
+            display: block !important;
         }
         
         .btn-custom {
@@ -165,7 +168,7 @@
         
         .what-section {
             background: var(--savannah-light-sand);
-            padding: 100px 0;
+            padding: 150px 0 100px;
             position: relative;
             z-index: 50;
         }
@@ -347,7 +350,6 @@
             box-shadow: none;
         }
         
-        /* CORRECTION DE L'ERREUR DU SVG */
         .navbar-toggler-icon {
             background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");        
         }
@@ -356,9 +358,8 @@
             scroll-behavior: smooth;
         }
         
-        /* ============ CORRECTIONS MOBILE COMPLÈTES ============ */
+        /* ============ CORRECTIONS MOBILE ============ */
         
-        /* MOBILE - NOUVELLE STRUCTURE */
         @media (max-width: 992px) {
             .hero-section {
                 height: auto;
@@ -421,13 +422,13 @@
                 width: fit-content;
             }
             
-            /* Image mobile - positionnée normalement sous le texte */
+            /* CORRECTION MOBILE POUR L'IMAGE 20EN1 */
             .hero-overlay-image {
                 position: relative !important;
                 bottom: 0 !important;
                 right: 0 !important;
                 margin: 40px auto 20px !important;
-                display: block;
+                display: block !important;
                 max-width: 90% !important;
                 width: 90% !important;
                 border-radius: 15px;
@@ -577,10 +578,6 @@
                 border-radius: 20px;
                 filter: drop-shadow(0 15px 30px rgba(0,0,0,0.4));
             }
-            
-            .what-section {
-                padding-top: 150px;
-            }
         }
         
         @media (max-width: 991px) {
@@ -628,10 +625,10 @@
             </div>
         </nav>
 
-        <!-- Hero Section - STRUCTURE MOBILE CORRIGÉE -->
+        <!-- Hero Section - STRUCTURE CORRIGÉE -->
         <section class="hero-section" id="home">
             <div class="container">
-                <div class="row">
+                <div class="row align-items-center">
                     <div class="col-lg-6">
                         <div class="hero-content">
                             <img src="CartoonPachyTitre.png" alt="CartoonPachy" class="hero-logo" loading="eager">
@@ -647,11 +644,11 @@
                     </div>
                 </div>
             </div>
-            <!-- Image positionnée correctement sur mobile -->
-            <img src="20en1.png" alt="20 Personnages CartoonPachy" class="hero-overlay-image" loading="lazy">
+            <!-- Image 20en1 CORRIGÉE -->
+            <img src="20en1.png" alt="20 Personnages CartoonPachy" class="hero-overlay-image" loading="lazy" onerror="this.src='https://via.placeholder.com/800x600/FF6B35/FFFFFF?text=20+CartoonPachys'">
         </section>
 
-        <!-- Le reste du contenu reste inchangé -->
+        <!-- Sections restantes -->
         <section class="what-section" id="collection">
             <div class="container">
                 <div class="row align-items-center">
@@ -797,6 +794,22 @@
             document.querySelector('.btn-custom').addEventListener('click', function() {
                 alert('Fonctionnalité de liste d\'attente à implémenter!');
             });
+
+            // Vérifier le chargement de l'image 20en1
+            const image = document.querySelector('.hero-overlay-image');
+            
+            image.onload = function() {
+                console.log('Image 20en1.png chargée avec succès');
+            };
+            
+            image.onerror = function() {
+                console.error('Erreur de chargement de 20en1.png');
+            };
+            
+            // Forcer l'affichage de l'image
+            image.style.display = 'block';
+            image.style.visibility = 'visible';
+            image.style.opacity = '1';
         });
     </script>
 </body>
